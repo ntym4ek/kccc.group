@@ -1,0 +1,152 @@
+<?php
+
+/**
+ * Implements hook_block_info().
+ */
+function ext_block_block_info()
+{
+  return [
+    'custom-block-front-banner' => [                     // по какой-то причине, если индекс содержит _ вместо - блок виден в базовой теме, но НЕ виден в подтеме.
+      'info' => t('CB | Front Banner Slider'),
+    ],
+    'custom-block-kccc-group' => [
+      'info' => t('CB | KCCC Group'),
+    ],
+    'custom-block-divisions' => [
+      'info' => t('CB | Divisions Carousel'),
+    ],
+    'custom-block-video' => [
+      'info' => t('CB | Video'),
+    ],
+    'custom-block-news' => [
+      'info' => t('CB | News'),
+    ],
+    'custom-block-quality' => [
+      'info' => t('CB | Quality and Technology'),
+    ],
+    'custom-block-counters' => [
+      'info' => t('CB | Counters'),
+    ],
+    'custom-block-advantages' => [
+      'info' => t('CB | Advantages'),
+    ],
+    'custom-block-advantages-2' => [
+      'info' => t('CB | Advantages 2'),
+    ],
+    'custom-block-structure' => [
+      'info' => t('CB | Structure'),
+    ],
+    'custom-block-growth' => [
+      'info' => t('CB | Growth'),
+    ],
+    'custom-block-contacts-map' => [
+      'info' => t('CB | Contacts and Map'),
+    ],
+    'custom-block-job' => [
+      'info' => t('CB | Job'),
+    ],
+  ];
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function ext_block_block_view($delta = '')
+{
+  $block = [];
+
+  // блоки с динамически формируемым содержимым
+  if ($delta == 'custom-block-divisions') {
+    $cards = [];
+    foreach (helper_get_divisions() as $division) {
+      $cards[] = theme('card_division', [
+        'title' => $division['title'],
+        'img' => $division['img'],
+        'path' => $division['path'],
+      ]);
+    }
+    $block['content'] = theme($delta, ['cards' => $cards]);
+  }
+
+  elseif ($delta == 'custom-block-front-banner') {
+    $block['content'] = theme($delta, ['slides' => helper_get_front_banner_slides()]);
+  }
+
+  elseif ($delta == 'custom-block-news') {
+    $block['content'] = theme($delta, ['cards' => helper_get_front_news()]);
+  }
+
+  // блоки со статичной разметкой
+  elseif (strpos($delta, 'custom-block-') === 0) {
+    $block['content'] = theme($delta);
+  }
+
+  // общее для программных блоков
+  if (strpos($delta, 'custom-block-') === 0) {
+    $block['subject'] = null;
+    drupal_add_css(drupal_get_path('module', 'ext_block') . '/css/ext_block.css');
+  }
+
+  return $block;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function ext_block_theme()
+{
+  return [
+    'custom-block-front-banner' => [
+      'variables' => [],
+      'template' => 'templates/block-front-banner',
+    ],
+    'custom-block-kccc-group' => [
+      'variables' => [],
+      'template' => 'templates/block-kccc-group',
+    ],
+    'custom-block-divisions' => [
+      'variables' => [],
+      'template' => 'templates/block-divisions',
+    ],
+    'custom-block-video' => [
+      'variables' => [],
+      'template' => 'templates/block-video',
+    ],
+    'custom-block-news' => [
+      'variables' => [],
+      'template' => 'templates/block-news',
+    ],
+    'custom-block-quality' => [
+      'variables' => [],
+      'template' => 'templates/block-quality',
+    ],
+    'custom-block-counters' => [
+      'variables' => [],
+      'template' => 'templates/block-counters',
+    ],
+    'custom-block-advantages' => [
+      'variables' => [],
+      'template' => 'templates/block-advantages',
+    ],
+    'custom-block-advantages-2' => [
+      'variables' => [],
+      'template' => 'templates/block-advantages-2',
+    ],
+    'custom-block-structure' => [
+      'variables' => [],
+      'template' => 'templates/block-structure',
+    ],
+    'custom-block-growth' => [
+      'variables' => [],
+      'template' => 'templates/block-growth',
+    ],
+    'custom-block-contacts-map' => [
+      'variables' => [],
+      'template' => 'templates/block-contacts-map',
+    ],
+    'custom-block-job' => [
+      'variables' => [],
+      'template' => 'templates/block-job',
+    ],
+  ];
+}

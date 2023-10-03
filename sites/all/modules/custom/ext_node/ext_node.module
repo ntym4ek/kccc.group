@@ -1,0 +1,92 @@
+<?php
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function ext_node_preprocess_page(&$vars)
+{
+  if (arg(0) == 'node' && isset($vars['node'])) {
+    if (in_array($vars['node']->type, ['news'])) {
+      // статистика
+
+      $vars['title'] = '';
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function ext_node_preprocess_node(&$vars)
+{
+  $node = $vars['node'];
+
+  // -- Изображения
+  $images = [];
+  if ($vars['view_mode'] == 'teaser' && isset($node->field_image_teaser)) {
+    $images[] = $vars['content']['field_image_teaser'][0];
+  }
+  elseif (isset($node->field_images)) {
+    foreach ($vars['content']['field_images']['#items'] as $key => $file) {
+      $images[] = $vars['content']['field_images'][$key];
+    }
+  }
+  elseif (isset($node->field_image)) {
+    $images[] = $vars['content']['field_image'][0];
+  }
+  $vars['images'] = $images;
+
+  // -- Информация
+  if (in_array($node->type, ['news'])) {
+    $vars['date'] = date('d.m.Y', $node->created);
+    $vars['stats'] = statistics_get($node->nid);
+  }
+}
+
+/**
+ * Implements hook_node_presave()
+ * @param $node
+ */
+function ext_node_node_presave($node)
+{
+  // запрос к типографу, причёсываем текст
+  if (in_array($node->type, ['news'])) {
+    foreach($node->body as $lang => $body) {
+      if ($text = ext_node_text_typograph_request($body[0]['value'])) {
+        $node->body[$lang][0]['value'] = $text;
+      }
+    }
+  }
+}
+
+/**
+ * Функция возвращает типографированный на http://mdash.ru/ результат
+ */
+function ext_node_text_typograph_request($text)
+{
+  $agent= 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.0.3705; .NET CLR 1.1.4322)';
+  $data = [
+    'text' => $text,
+    'OptAlign.oa_oquote'=>'off',
+  ];
+  $headers = [
+    'accept: application/json',
+    'Content-Type: application/x-www-form-urlencoded',
+  ];
+
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL,'http://mdash.ru/api.v1.php');
+  curl_setopt($ch, CURLOPT_POST, 1);
+  curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+  curl_setopt($ch, CURLOPT_USERAGENT, $agent);
+  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+  if ($response = curl_exec($ch)) {
+    $result = drupal_json_decode($response);
+    $result = isset($result['result']) ? urldecode($result['result']) : $result;
+  }
+  curl_close($ch);
+
+  return $result ?? false;
+}

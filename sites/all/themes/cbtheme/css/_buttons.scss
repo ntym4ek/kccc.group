@@ -1,0 +1,47 @@
+@import "variables"; // продублировано из styles.scss, чтобы переменные не подсвечивались
+
+
+.btn {
+  display: inline-block;
+  background: transparent;
+  border: $button-border-width solid $text-color;
+  color: $text-color; text-transform: uppercase; text-decoration: none; text-align: center;
+  padding: $gutter*.6 $gutter;
+  transition: all 200ms;
+  //vertical-align: top;
+  cursor: pointer;
+  height: $form-item-height;
+  &:not(:last-child) { margin-right: 1rem; }
+  &:hover, &:focus {
+    background: darken(#fff, 15%);
+  }
+  &.btn-brand {
+    background: $brand-color;
+    border-color: $brand-color;
+    color: #fff;
+    &:hover, &:focus {
+      background: darken($brand-color, 5%);
+    }
+  }
+  &.btn-danger {
+    background: $brand-red;
+    border-color: $brand-red;
+    color: #fff;
+    &:hover, &:focus {
+      background: darken($brand-red, 5%);
+    }
+  }
+  &.btn-large {
+    font-size: $font-size-large;
+    padding: $gutter*.6 $gutter*1.5;
+    height: $form-item-height*1.2;
+  }
+  &.btn-small {
+    border-width: 1px;
+    padding: $gutter*.3 $gutter;
+    height: $form-item-height*.7;
+    text-transform: initial;
+  }
+  &.btn-wide { padding-left: $gutter*2; padding-right: $gutter*2; }
+  &.btn-full-wide { width: 100%; }
+}

@@ -1,0 +1,100 @@
+<?php
+
+// заметки к проекту
+// 1. Для корректного применения перевода меню нужно пропатчить файл i18n_menu.module
+//  --395     $link = $item['link'];
+//  ++395     $link = &$item['link'];
+
+
+/**
+ * Implements hook_menu_alter()
+ */
+function helper_menu_alter(&$items)
+{
+  // убрать материалы с Главной
+  $items['node']['page callback'] = 'helper_empty_front_page_callback';
+}
+
+function helper_empty_front_page_callback()
+{
+  return [];
+}
+
+function helper_get_front_banner_slides()
+{
+  $banners = [];
+  if ($terms = taxonomy_get_tree(taxonomy_vocabulary_machine_name_load('slider_front_banners')->vid, 0, null, true)) {
+    foreach($terms as $term) {
+      if (module_exists('i18n_taxonomy')) {
+        $term = i18n_taxonomy_localize_terms($term);
+      }
+      $banners[] = [
+        'title' => $term->name,
+        'img' => file_create_url($term->field_image["und"][0]["uri"]),
+        'path' => $term->field_text_link["und"][0]["safe_value"],
+      ];
+    }
+  }
+
+  return $banners;
+}
+function helper_get_divisions()
+{
+  $offers = [];
+  if ($terms = taxonomy_get_tree(taxonomy_vocabulary_machine_name_load('slider_offers')->vid, 0, null, true)) {
+    foreach($terms as $term) {
+      if (module_exists('i18n_taxonomy')) {
+        $term = i18n_taxonomy_localize_terms($term);
+      }
+      $offers[] = [
+        'title' => $term->name,
+        'img' => file_create_url($term->field_image["und"][0]["uri"]),
+        'path' => $term->field_text_link["und"][0]["safe_value"],
+      ];
+    }
+  }
+
+  return $offers;
+}
+
+function helper_get_front_news()
+{
+  $news = [];
+
+  $dbr = db_select('node', 'n');
+  $dbr->condition('n.type', 'news');
+  $dbr->addField('n', 'nid');
+  $dbr->orderBy('n.created', 'DESC');
+  $dbr->range(0, 10);
+  if ($nodes = $dbr->execute()->fetchCol()) {
+
+    foreach($nodes as $nid) {
+      $node_wr = entity_metadata_wrapper('node', $nid);
+      $text = $node_wr->body->summary->value() ?: text_summary($node_wr->body->value->value(), '', 180);
+      $news[] = [
+        'title' => $node_wr->label(),
+        'text' => $text,
+        'img' => image_style_url('news_teaser', $node_wr->field_images[0]->value()['uri']),
+        'path' => drupal_get_path_alias('node/' . $node_wr->getIdentifier()),
+      ];
+    }
+  }
+
+  return $news;
+}
+
+function helper_date_select_process_alter(array &$element, array &$form_state, array $context)
+{
+  // убрать из списка года, за которые нет Новостей
+  $dbr = db_select('node', 'n');
+  $dbr->condition('n.type', 'news');
+  $dbr->addExpression('MIN(n.created)');
+  if ($date_min = $dbr->execute()->fetchField()) {
+    foreach ($element["year"]["#options"] as $key => $option) {
+      if ($option < date('Y', $date_min)) {
+        unset($element["year"]["#options"][$key]);
+      }
+    }
+  }
+}
+

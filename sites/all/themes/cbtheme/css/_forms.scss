@@ -1,0 +1,61 @@
+@import "variables"; // продублировано из styles.scss, чтобы переменные не подсвечивались
+
+.form-item {
+  margin-top: 0;
+  label,
+  .label {
+    color: $text-light; font-weight: 400;
+    margin-bottom: 5px;
+  }
+  .form-text,
+  .form-select {
+    padding: 6px 12px;
+    color: $text-color; font-size: $font-size-small;
+    background-color: #fff; background-image: none; border: 1px solid #ccc; border-radius: 2px;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    max-width: 100%;
+    height: $form-item-height;
+  }
+  .form-text {
+    max-width: 100%;
+  }
+  .description {
+    color: $text-muted;
+    strong { font-weight: 400; }
+  }
+}
+.form-actions {
+  margin-top: $gutter*2;
+}
+form,
+.form-content {
+  .ajax-progress {
+    position: absolute; top: 0; bottom: 0; left:0; right: 0; z-index: 99;
+    background: #000000bb;
+    display: flex; justify-content: center; align-items: center;
+    color: #fff;
+    transition: all 200ms;
+  }
+}
+.filter-wrapper {
+  margin-bottom: 1rem;
+}
+.form-managed-file {
+  margin-bottom: .5rem;
+}
+
+.user-auth-form-wrapper {
+  max-width: 450px;
+  margin: 0 auto 3rem;
+  display: flex; flex-wrap: wrap;
+  .recovery-link { color: $text-muted; font-size: $font-size-small; }
+  > h1,
+  > form {
+    line-height: 1.1;
+    width: 100%
+  }
+  @media #{$tablet} {
+    margin: 5rem auto 0;
+  }
+}
+

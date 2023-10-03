@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="bc6d61c0-0ada-4776-a5cd-c12840aec68a" name="kccc.group" url="https://kccc.group">
+        <fileTransfer rootFolder="/kccc.group/docs" host="ftp.kcc2519239.nichost.ru" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" connections="4" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+        <option name="numberOfConnections" value="4" />
+      </webServer>
+    </option>
+  </component>
+</project>

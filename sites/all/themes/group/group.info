@@ -1,0 +1,10 @@
+name = GROUP
+description = Тема на базе Custom Base Theme
+core = 7.x
+base theme = cbtheme
+
+
+stylesheets[all][] = css/group.css
+
+scripts[] = js/group.js
+

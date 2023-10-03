@@ -1,0 +1,27 @@
+@import "../../cbtheme/css/variables"; // продублировано из styles.scss, чтобы переменные не подсвечивались
+
+$content-well-max-width: 1320px;
+
+//- colors
+$brand-color:             #214A8F;
+$well-bkg-clr:            #E1EBF1;
+$page-bkg:                #fff;
+
+$header-bkg:              none;
+$header-text:             #fff;
+
+$menu-item-color:         #fff;
+$menu-item-active-color:  #fff;
+
+// шрифт и размеры
+//
+$font-size-h1:     3.33rem;           // 60
+$font-size-h2:     2.22rem;           // 40
+$font-size-h3:     1.56rem;           // 28
+$font-size-h4:     1.22rem;           // 22
+$font-size-h5:     1rem;
+$font-size-h6:     .8rem;
+
+$font-size-large:  1.11rem;           // 20
+$font-size-base:   1rem;              // 18
+$font-size-small:  .89rem;            // 16

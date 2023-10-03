@@ -1,0 +1,251 @@
+@import "variables"; // продублировано из styles.scss, чтобы переменные не подсвечивались
+
+@import url($font-url);
+
+html {
+  height: 100%;
+  font-size: 12px;
+  @media #{$smartphone} { font-size: 14px; }
+  @media #{$tablet}     { font-size: 15px; }
+  @media #{$laptop}     { font-size: 16px; }
+  @media #{$desktop}    { font-size: 16px; }
+}
+
+* {
+  box-sizing: border-box;
+  outline: 0 !important;
+}
+
+body {
+  font-family: $font-name, Helvetica, Arial, sans-serif;
+  color: $text-color; line-height: 1.22;
+  background-color: $page-bkg;
+  position: relative;
+  min-height: 100%;
+}
+
+h1, .h1 { font-size: $font-size-h1*.6; font-weight: 500; margin: 2rem 0 1rem; }
+h2, .h2 { font-size: $font-size-h2*.8; font-weight: 400; margin: 2rem 0 1rem; }
+h3, .h3 { font-size: $font-size-h3*.8; font-weight: 400; margin: 2rem 0 1rem; }
+h4, .h4 { font-size: $font-size-h4; margin: 1rem 0; }
+h5, .h5 { font-size: $font-size-h5; margin: 1rem 0; }
+h6, .h6 { font-size: $font-size-h6; margin: 1rem 0; }
+@media #{$tablet} {
+  h1, .h1 { font-size: $font-size-h1; font-weight: initial;  }
+  h2, .h2 { font-size: $font-size-h2; font-weight: initial;  }
+  h3, .h3 { font-size: $font-size-h3; font-weight: initial;  }
+  //h4, .h4 { font-size: $font-size-h4; }
+  //h5, .h5 { font-size: $font-size-h5; }
+  //h6, .h6 { font-size: $font-size-h6; }
+}
+
+
+.container {
+  padding: 0 $gutter*2;
+  width: 100%;
+
+  &.full-height {
+    height: 100%;
+  }
+
+  @media #{$tablet} {
+    max-width: $content-well-max-width;
+    margin: 0 auto;
+    padding: 0 $gutter;
+  }
+}
+
+// растянуть блок на всю ширину экрана за рамки .container
+.screen-width {
+  position: relative;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  overflow: hidden;                                         // предотвращает выход margin за границы блока (схлопывание)
+}
+
+// --- Разметка страницы --------------------------------------------------------------
+$header-padding: 0.8rem;
+.page {
+  display: flex; flex-direction: column;                    // прижать подвал
+  min-height: 100vh;                                        // при открытом меню подвал не прижимается к низу страницы
+  transition: all 200ms ease-in;
+
+  >.header {
+    display: flex; align-items: center;
+    background: $header-bkg;
+    box-shadow: 0 4px 20px 0 rgba(0,0,0,.1);
+    padding: $header-padding 0;
+    height: $header-height;
+    .branding {
+      display: flex; justify-content: center;
+      text-align: center; line-height: 1;
+      height: calc(#{$header-height} - 2*#{$header-padding});
+      img { display: block; max-height: 100%; }
+    }
+    .menu {
+      display: flex; justify-content: space-between;
+    }
+    @media #{$tablet} {
+      height: calc(#{$header-height} + 1rem);
+      .branding {
+        height: calc(#{$header-height}  + 1rem - 2*#{$header-padding});
+        justify-content: start;
+        text-align: left;
+      }
+    }
+  }
+
+  >.main {
+    flex: 1 0 auto;
+    .messages {
+      margin: 1em 0;
+      p { margin: 0; }
+    }
+  }
+
+  >.footer {
+    background: $footer-bkg;
+    color: #fff;
+    padding: 1rem 0;
+
+    .container {
+      height: 100%;
+    }
+    .branding {
+      height: 60px;
+      img { max-height: 100%; }
+    }
+    .rights {
+      font-size: 1.1rem; text-align: right;
+    }
+    @media #{$tablet} {
+      padding: 2rem 0;
+    }
+  }
+}
+
+.page-content {
+  //padding-bottom: 2rem;  // внизу может стоять блок со screen-width и background и padding оставит белую полосу
+}
+
+
+// --- Закладки ------------------------------------------------------------------------
+ul.tabs.primary {
+  text-align: right;
+  margin: 2em 0 1rem;
+  li {
+    a {
+      color: $text-color;
+      padding: 0.5em 1em;
+      line-height: 2em;
+    }
+    &.active a {
+      background: $page-bkg;
+      border-bottom: 1px solid $page-bkg;
+    }
+  }
+}
+
+// --- Breadcrumbs --------------------------------------------------------------------
+.breadcrumb {
+  color: $text-light; font-size: $font-size-small;
+  margin: $gutter*2 0;
+  a {
+    color: $text-light; text-decoration: none;
+    &:hover { color: $brand-color; }
+  }
+}
+.page-user .breadcrumb { display: none; }
+
+// --- Блоки --------------------------------------------------------------------------
+.block {
+  margin-bottom: 2rem;
+  p:first-child { margin-top: 0; }
+  @media #{$tablet} {
+    margin-bottom: 4rem;
+    p:last-child { margin-bottom: 0; }
+  }
+  .page-content &:last-child { margin-bottom: 0; }
+}
+
+// --- Views --------------------------------------------------------------------------
+.view {
+  margin-bottom: 2rem;
+  @media #{$tablet} {
+    margin-bottom: 4rem;
+  }
+}
+.views-exposed-form,
+.exposed-filters {
+  margin-bottom: 1rem;
+  .views-exposed-widgets,
+  .filters { @include row(); }
+  .filters {
+    float: none;
+    width: initial;
+  }
+  .views-exposed-widget,
+  .filters > .form-item {
+    @include col('xs', 12);
+    margin-bottom: 1rem;
+    label {
+      font-weight: 500;
+      margin-bottom: .5rem;
+    }
+    select, input { width: 100%; }
+  }
+  @media #{$tablet} {
+    .views-exposed-widget,
+    .filters > .form-item {
+      @include col('md', 4);
+    }
+  }
+}
+
+// --- Ноды ---------------------------------------------------------------------------
+.node-article {
+  padding-bottom: 2rem;
+}
+
+// --- Таблицы ------------------------------------------------------------------------
+table {
+  margin-bottom: 1rem;
+  width: 100%;
+  th {
+    font-weight: 500;
+    padding: .5rem;
+    border-top: 1px solid transparent;  border-left: 1px solid transparent;
+    &:last-child { border-right: 1px solid transparent; }
+  }
+  td {
+    border-top: 1px solid $text-muted;  border-left: 1px solid $text-muted;
+    font-size: $font-size-small;
+    padding: .5rem;
+    &:last-child { border-right: 1px solid $text-muted; }
+  }
+  tr:last-child td { border-bottom: 1px solid $text-muted; }
+}
+
+fieldset {
+  border-width: 1px;
+  padding: 1rem;
+}
+
+// --- Закладки ------------------------------------------------------------------------
+.vertical-tabs {
+  ul.vertical-tabs-list li a {
+    color: inherit;
+    padding: .8rem;
+  }
+  strong { font-weight: 500; }
+  .summary {
+    color: $text-light; font-size: $font-size-base*.8;
+    margin-top: .5rem;
+  }
+  fieldset.vertical-tabs-pane {
+    padding: 1rem;
+    @media #{$tablet} {
+      padding: 1rem 2rem;
+    }
+  }
+}

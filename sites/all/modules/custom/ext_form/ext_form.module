@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * Implements hook_form_FORM_ID_alter()
+ */
+function ext_form_form_webform_client_form_10_alter(&$form, &$form_state)
+{
+  // ajax обновление формы отправки Резюме
+  $form['#prefix'] = '<div id="' . $form["#id"] . '-wrapper">';
+  $form['#suffix'] = '</div>';
+
+  $form['actions']['submit']['#ajax'] = [
+    'callback' => 'ext_form_webform_client_form_10_ajax_callback',
+    'wrapper' => $form["#id"] . '-wrapper',
+  ];
+
+  $form["#submit"][] = 'ext_form_webform_client_form_10_submit';
+}
+
+function ext_form_webform_client_form_10_ajax_callback($form, $form_state)
+{
+  if (!empty($form["#submission"])) {
+    $form['submitted']['complete'] = [
+      '#markup' => '<div class="complete"><h3>Резюме отправлено в отдел кадров.</h3><p>Сотрудник свяжется с вами при необходимости.</p></div>',
+      '#weight' => -10,
+    ];
+  }
+  // сбросить сообщение после обновления страницы
+  unset($_SESSION["webform_confirmation"]);
+
+  return $form;
+}
+
+function ext_form_webform_client_form_10_submit($form, &$form_state)
+{
+  $form_state['rebuild'] = TRUE;
+}
