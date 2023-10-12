@@ -56,7 +56,11 @@ function ext_block_block_view($delta = '')
   $block = [];
 
   // блоки с динамически формируемым содержимым
-  if ($delta == 'custom-block-divisions') {
+  if ($delta == 'custom-block-front-banner') {
+    $block['content'] = theme($delta, ['slides' => helper_get_front_banner_slides()]);
+  }
+
+  elseif ($delta == 'custom-block-divisions') {
     $cards = [];
     foreach (helper_get_divisions() as $division) {
       $cards[] = theme('card_division', [
@@ -66,10 +70,6 @@ function ext_block_block_view($delta = '')
       ]);
     }
     $block['content'] = theme($delta, ['cards' => $cards]);
-  }
-
-  elseif ($delta == 'custom-block-front-banner') {
-    $block['content'] = theme($delta, ['slides' => helper_get_front_banner_slides()]);
   }
 
   elseif ($delta == 'custom-block-news') {

@@ -19,10 +19,11 @@
   flex-direction: column; }
 
 .col {
-  flex-grow: 1;
-  flex-basis: 0;
   max-width: 100%;
-  padding: 0 1rem; }
+  padding: 0 1rem;
+  flex: 0 0 auto; }
+  .col.fill, .col.col-fill {
+    flex-grow: 1; }
 
 .col.reverse {
   flex-direction: column-reverse; }
@@ -845,7 +846,8 @@ img {
 
 html {
   height: 100%;
-  font-size: 12px; }
+  font-size: 12px;
+  overflow-y: scroll; }
   @media only screen and (min-width: 360px) {
     html {
       font-size: 14px; } }
@@ -937,27 +939,18 @@ h6, .h6 {
     align-items: center;
     background: none;
     box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1);
-    padding: 0.8rem 0;
-    height: 5rem; }
+    height: 75px; }
     .page > .header .branding {
       display: flex;
       justify-content: center;
       text-align: center;
-      line-height: 1;
-      height: calc(5rem - 2*0.8rem); }
+      line-height: 1; }
       .page > .header .branding img {
         display: block;
         max-height: 100%; }
     .page > .header .menu {
       display: flex;
       justify-content: space-between; }
-    @media only screen and (min-width: 768px) {
-      .page > .header {
-        height: calc(5rem + 1rem); }
-        .page > .header .branding {
-          height: calc(5rem  + 1rem - 2*0.8rem);
-          justify-content: start;
-          text-align: left; } }
   .page > .main {
     flex: 1 0 auto; }
     .page > .main .messages {
@@ -1313,9 +1306,9 @@ ul.menu {
   border-radius: 2px;
   display: block;
   color: #fff;
-  font-size: 5rem;
-  width: 5rem;
-  height: 5rem;
+  font-size: 75px;
+  width: 75px;
+  height: 75px;
   transition: all 200ms ease-in;
   overflow: hidden; }
   .nav-mobile-label .label {
@@ -1429,10 +1422,34 @@ ul.menu {
   html {
     font-size: 18px; } }
 
+.branding {
+  height: 100%;
+  width: 300px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  text-align: center; }
+  .branding a {
+    color: inherit;
+    white-space: nowrap; }
+  .branding .brand {
+    flex: 1 0 auto; }
+  .branding .name {
+    font-size: 1.7em;
+    font-weight: 700;
+    text-transform: uppercase; }
+  .branding .slogan {
+    font-size: .85em;
+    max-width: 200px;
+    margin: 0 auto; }
+  .branding .logo {
+    height: 100%;
+    flex: 0 0 auto; }
+
 .page > .header {
   box-shadow: none;
   position: absolute;
-  top: 3rem;
+  top: 45px;
   left: 0;
   right: 0;
   z-index: 10;
@@ -1453,103 +1470,73 @@ ul.menu {
       content: "";
       display: block;
       flex: 1; }
+  .page > .header .col-1 {
+    flex: 1 0 auto;
+    padding-right: 30px; }
   .page > .header .col-2 {
-    flex: auto; }
+    flex: 0 0 75px; }
   .page > .header .branding {
     background-color: #214A8F;
     height: 100%;
-    width: 18rem;
-    margin-right: 2rem;
-    padding: 1rem 1rem 1rem 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    width: 100%;
     color: #fff;
-    text-align: center; }
-    .page > .header .branding a {
-      color: inherit;
-      white-space: nowrap; }
-    .page > .header .branding .brand {
-      flex: 0;
-      line-height: 1.3; }
-    .page > .header .branding .name {
-      font-size: 20px;
-      font-weight: 700;
-      text-transform: uppercase; }
-    .page > .header .branding .slogan {
-      font-size: 12px;
-      max-width: 200px;
-      margin: 0 auto; }
-    .page > .header .branding .logo {
-      margin-right: .5rem;
-      height: 100%;
-      flex: 0 1 40px; }
+    font-size: .8rem; }
   .page > .header .menu-bkg {
     display: grid;
     background: rgba(27, 30, 40, 0.4);
     height: 100%; }
   .page > .header .menu-wr {
     display: flex;
-    justify-content: center;
     align-items: center;
     height: 100%; }
-    .page > .header .menu-wr ul.menu > li > a, .page > .header .menu-wr ul.menu > li.first > a {
-      font-size: 0.8rem;
-      padding: 1rem .8rem; }
-    .page > .header .menu-wr .sub-menu {
-      font-size: 0.89rem;
-      min-width: 230px; }
+    .page > .header .menu-wr .primary-menu {
+      flex: 1 1 auto; }
+    .page > .header .menu-wr .language {
+      flex: 0 0 auto; }
+    .page > .header .menu-wr .secondary-menu {
+      flex: 0 0 auto; }
     .page > .header .menu-wr .icon-user {
       width: 1rem; }
-  .page > .header .language-select {
-    margin-left: 2rem; }
-    .page > .header .language-select a {
-      display: block;
-      color: #fff;
-      font-size: 0.8rem;
-      padding: 1rem .8rem; }
+  .page > .header .menu > li > a, .page > .header .menu > li.first > a {
+    font-size: 0.8rem;
+    padding: 1rem .8rem; }
+  .page > .header .language a {
+    display: block;
+    color: #fff;
+    font-size: 0.8rem;
+    padding: 1rem .8rem; }
   .page > .header .nav-mobile-label {
     justify-self: end; }
-  @media only screen and (min-width: 768px) {
-    .page > .header {
-      height: 6rem; }
-      .page > .header .branding {
-        padding-left: 2rem;
-        width: 20rem; }
-        .page > .header .branding .name {
-          font-size: 24px; }
-        .page > .header .branding .logo {
-          flex-basis: 55px; }
-      .page > .header .menu-wr {
-        justify-content: space-between;
-        padding: 1rem; } }
   @media only screen and (min-width: 1366px) {
-    .page > .header .branding {
-      padding-left: 1rem;
-      margin-right: 4rem; }
-      .page > .header .branding .name {
-        font-size: 30px; }
-      .page > .header .branding .slogan {
-        font-size: 14px; }
-      .page > .header .branding .logo {
-        flex-basis: 75px; }
-    .page > .header .menu-wr {
-      padding-left: 2rem; }
-      .page > .header .menu-wr ul.menu > li > a, .page > .header .menu-wr ul.menu > li.first > a {
-        font-size: 1.22rem;
-        font-weight: 700;
+    .page > .header {
+      height: 90px; }
+      .page > .header .col-1 {
+        flex: 0 0 auto; }
+      .page > .header .col-2 {
+        flex: 1 0 auto; }
+      .page > .header .branding {
+        font-size: 1rem;
+        padding: 15px 30px 15px 1rem;
+        width: 360px; }
+      .page > .header .menu .sub-menu {
+        font-size: 0.89rem;
+        border-left: 5px solid #214A8F;
+        min-width: 230px; }
+      .page > .header .menu > li > a, .page > .header .menu > li.first > a {
+        font-size: 1rem;
+        font-weight: 500;
         padding: 1rem 2rem; }
-    .page > .header .language-select a {
-      font-size: 1.22rem;
-      font-weight: 700; } }
+      .page > .header .language a {
+        font-size: 1rem;
+        font-weight: 500; } }
 
-.menu-mobile-wr .language-select {
+.menu-mobile-wr .language {
   padding: 0 1rem; }
-  .menu-mobile-wr .language-select a {
+  .menu-mobile-wr .language a {
     display: block;
     color: #fff;
     padding: 1rem; }
-.menu-mobile-wr ul.menu .sub-menu {
+.menu-mobile-wr .menu .sub-menu {
   padding-left: 1rem; }
 
 .page-highlighted .screen-width {

@@ -19,32 +19,32 @@
     <header class="header">
       <div class="header-wr">
         <div class="container">
-        <div class="row middle-xs full-height no-wrap">
-          <div class="col col-1 full-height col-no-gutter">
-            <div class="branding">
-                <div class="brand">
-                  <div class="name"><a href="<?php print $front_page ?>">KCCC GROUP</a></div>
-                  <div class="slogan"><?php print t('Innovative Chemical Holding'); ?></div>
-                </div>
-              <div class="logo"><a href="<?php print $front_page ?>"><img src="<?php print $logo ?>" /></a></div>
-            </div>
-          </div>
-          <div class="col col-2 full-height col-no-gutter">
-            <div class="menu-bkg">
-              <div class="nav-mobile-label hide-md"><div class="label"><div class="icon"></div></div></div>
-              <div class="hide-xs show-md">
-                <div class="menu-wr">
-                  <div class="primary-menu">
-                    <?php if ($primary_nav): print $primary_nav; endif; ?>
-                    <div class="language-select"><?php if ($language_select): print $language_select; endif; ?></div>
+          <div class="row middle-xs full-height no-wrap">
+            <div class="col col-1 full-height col-no-gutter">
+              <div class="branding">
+                  <div class="brand">
+                    <div class="name"><a href="<?php print $front_page ?>">KCCC GROUP</a></div>
+                    <div class="slogan"><?php print t('Innovative Chemical Holding'); ?></div>
                   </div>
-                  <div class="secondary-menu"><?php if ($secondary_nav): print $secondary_nav; endif; ?></div>
+                <div class="logo"><a href="<?php print $front_page ?>"><img src="<?php print $logo ?>" /></a></div>
+              </div>
+            </div>
+            <div class="col col-2 full-height col-no-gutter">
+              <div class="menu-bkg">
+                <div class="nav-mobile-label show-xs hide-lg"><div class="label"><div class="icon"></div></div></div>
+                <div class="hide-xs show-lg">
+                  <div class="menu-wr">
+                    <div class="primary-menu">
+                      <?php if ($primary_nav): print $primary_nav; endif; ?>
+                    </div>
+                    <div class="language"><?php if ($language_select): print $language_select; endif; ?></div>
+                    <div class="secondary-menu"><?php if ($secondary_nav): print $secondary_nav; endif; ?></div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
       </div>
     </header>
     <?php endif; ?>

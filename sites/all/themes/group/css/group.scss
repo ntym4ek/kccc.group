@@ -17,10 +17,31 @@ html {
   @media #{$laptop}     { font-size: 18px; }
 }
 
+.branding {
+  height: 100%; width: 300px;
+  padding: 15px;
+  display: flex; align-items: center;
+  text-align: center;
+  a {
+    color: inherit; white-space: nowrap;
+  }
+  .brand { flex: 1 0 auto; }
+  .name { font-size: 1.7em; font-weight: 700; text-transform: uppercase; }
+  .slogan {
+    font-size: .85em;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+  .logo {
+    height: 100%;
+    flex: 0 0 auto;
+  }
+}
+
 // -- висящий двойной header с лого и меню
 .page > .header {
   box-shadow: none;
-  position: absolute; top: 3rem; left: 0; right: 0; z-index: 10;
+  position: absolute; top: 45px; left: 0; right: 0; z-index: 10;
   padding: 0;
   .container { padding: 0 1rem; }
   .header-wr {
@@ -39,31 +60,15 @@ html {
       flex: 1;
     }
   }
-  .col-2 { flex: auto; }
+  .col-1 {
+    flex: 1 0 auto;
+    padding-right: 30px;
+  }
+  .col-2 { flex: 0 0 $header-height; }
   .branding {
     background-color: $brand-color;
-    height: 100%; width: 18rem;
-    margin-right: 2rem; padding: 1rem 1rem 1rem 2.5rem;
-    display: flex; align-items: center; justify-content: space-between;
-    color: #fff; text-align: center;
-    a {
-      color: inherit; white-space: nowrap;
-    }
-    .brand {
-      flex: 0;
-      line-height: 1.3;
-    }
-    .name { font-size: 20px; font-weight: 700; text-transform: uppercase; }
-    .slogan {
-      font-size: 12px;
-      max-width: 200px;
-      margin: 0 auto;
-    }
-    .logo {
-      margin-right: .5rem;
-      height: 100%;
-      flex: 0 1 40px;
-    }
+    height: 100%; width: 100%;
+    color: #fff; font-size: .8rem;
   }
   .menu-bkg {
     display:grid;
@@ -71,67 +76,59 @@ html {
     height: 100%;
   }
   .menu-wr {
-    display: flex; justify-content: center; align-items: center;
+    display: flex; align-items: center;
     height: 100%;
-    ul.menu > li {
-      > a, &.first > a {
-        font-size: $font-size-h6;
-        padding: 1rem .8rem;
-      }
-    }
-    .sub-menu {
-      font-size: $font-size-small;
-      min-width: 230px;
-    }
+    .primary-menu { flex: 1 1 auto; }
+    .language { flex: 0 0 auto; }
+    .secondary-menu { flex: 0 0 auto; }
     .icon-user { width: 1rem; }
   }
-  .language-select {
-    margin-left: 2rem;
-    a {
-      display: block;
-      color: #fff; font-size: $font-size-h6;
+  .menu > li {
+    > a, &.first > a {
+      font-size: $font-size-h6;
       padding: 1rem .8rem;
     }
+  }
+
+  .language a {
+    display: block;
+    color: #fff; font-size: $font-size-h6;
+    padding: 1rem .8rem;
   }
   .nav-mobile-label { justify-self: end; }
 
   @media #{$tablet} {
-    height: 6rem;
-    .branding {
-      padding-left: 2rem;
-      width: 20rem;
-      .name { font-size: 24px; }
-      .logo { flex-basis: 55px; }
-    }
-    .menu-wr {
-      justify-content: space-between;
-      padding: 1rem;
-    }
   }
   @media #{$laptop} {
+    height: 90px;
+    .col-1 { flex: 0 0 auto; }
+    .col-2 { flex: 1 0 auto; }
     .branding {
-      padding-left: 1rem; margin-right: 4rem;
-      .name { font-size: 30px; }
-      .slogan { font-size: 14px; }
-      .logo { flex-basis: 75px; }
+      font-size: 1rem;
+      padding: 15px 30px 15px 1rem;
+      width: 360px;                     // определяет ширину брендовой части меню
     }
-    .menu-wr {
-      padding-left: 2rem;
-      ul.menu > li {
+    .menu {
+      .sub-menu {
+        font-size: $font-size-small;
+        border-left: 5px solid $brand-color;
+        min-width: 230px;
+      }
+      > li {
         > a, &.first > a {
-          font-size: $font-size-h4; font-weight: 700;
+          font-size: $font-size-h5; font-weight: 500;
           padding: 1rem 2rem;
         }
       }
     }
-    .language-select a {
-      font-size: $font-size-h4; font-weight: 700;
+    .language a {
+      font-size: $font-size-h5; font-weight: 500;
     }
   }
 }
 
 .menu-mobile-wr {
-  .language-select {
+  .language {
     padding: 0 1rem;
     a {
       display: block;
@@ -139,7 +136,7 @@ html {
       padding: 1rem;
     }
   }
-  ul.menu .sub-menu { padding-left: 1rem; }
+  .menu .sub-menu { padding-left: 1rem; }
 }
 
 

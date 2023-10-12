@@ -19,7 +19,14 @@
 }
 
 .col {
-  @include col();
+  //@include col();
+  max-width: 100%;    // col будет колонка свободной ширины
+  padding: 0 1rem;
+  flex: 0 0 auto;
+  &.fill,             // устаревший
+  &.col-fill {
+    flex-grow: 1;     // col-fill будет заполнять пустое пространство
+  }
 }
 
 .col.reverse {

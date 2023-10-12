@@ -49,9 +49,12 @@
       height: 750px;
     }
     .text-wr {
-      margin-top: 12rem; padding-left: 0;
+      margin-top: 210px; padding-left: 0;
       max-width: 500px;
-      h2 { font-size: $font-size-h1; }
+      h2 {
+        font-size: 60px;
+        margin: 30px 0;
+      }
     }
   }
 }
