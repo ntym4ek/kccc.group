@@ -8,7 +8,7 @@
     <div class="menu-mobile-wr">
       <div><?php if ($primary_nav): print $primary_nav; endif; ?></div>
       <div>
-        <div class="language-select"><?php if ($language_select): print $language_select; endif; ?></div>
+        <div class="language"><?php if ($language_select): print $language_select; endif; ?></div>
         <?php if ($secondary_nav): print $secondary_nav; endif; ?>
       </div>
     </div>

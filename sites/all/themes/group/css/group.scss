@@ -48,10 +48,11 @@ html {
     display: flex;
     width: 100%; height: 100%;
     &:before {
+      background-color: $brand-color;
       content: "";
       display: block;
       flex: 1;
-      background-color: $brand-color;
+      margin-right: -1px; // закрыть прозрачную полосу на макбуке
     }
     &:after {
       background: rgba(27, 30, 40, 0.4);
@@ -75,6 +76,7 @@ html {
     display:grid; justify-content: flex-end;
     background: rgba(27, 30, 40, 0.4);
     height: 100%;
+    position: relative;
   }
   .menu-wr {
     display: flex; align-items: center;
@@ -96,7 +98,6 @@ html {
     color: #fff; font-size: $font-size-h6;
     padding: 1rem .8rem;
   }
-  .nav-mobile-label { position: relative; }
 
   @media #{$tablet} {
     .branding {
