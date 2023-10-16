@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="kccc.group" confirmBeforeUploading="false">
+  <component name="PublishConfigData" serverName="kccc.group" uploadOnCheckin="bc6d61c0-0ada-4776-a5cd-c12840aec68a" confirmBeforeUploading="false">
     <option name="confirmBeforeUploading" value="false" />
     <serverData>
       <paths name="ae.local">
@@ -116,5 +116,6 @@
         </serverdata>
       </paths>
     </serverData>
+    <option name="myUploadOnCheckinName" value="kccc.group" />
   </component>
 </project>

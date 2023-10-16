@@ -1471,18 +1471,21 @@ ul.menu {
       display: block;
       flex: 1; }
   .page > .header .col-1 {
-    flex: 1 0 auto;
+    flex: 0 0 auto;
     padding-right: 30px; }
   .page > .header .col-2 {
-    flex: 0 0 75px; }
+    flex: 1 0 auto; }
   .page > .header .branding {
     background-color: #214A8F;
     height: 100%;
-    width: 100%;
+    width: 270px;
     color: #fff;
     font-size: .8rem; }
+    .page > .header .branding .logo {
+      flex: 0 0 41px; }
   .page > .header .menu-bkg {
     display: grid;
+    justify-content: flex-end;
     background: rgba(27, 30, 40, 0.4);
     height: 100%; }
   .page > .header .menu-wr {
@@ -1506,26 +1509,32 @@ ul.menu {
     font-size: 0.8rem;
     padding: 1rem .8rem; }
   .page > .header .nav-mobile-label {
-    justify-self: end; }
+    position: relative; }
+  @media only screen and (min-width: 768px) {
+    .page > .header .branding {
+      width: 300px;
+      padding: 15px 30px; } }
   @media only screen and (min-width: 1366px) {
     .page > .header {
       height: 90px; }
-      .page > .header .col-1 {
-        flex: 0 0 auto; }
-      .page > .header .col-2 {
-        flex: 1 0 auto; }
       .page > .header .branding {
         font-size: 1rem;
         padding: 15px 30px 15px 1rem;
         width: 360px; }
+        .page > .header .branding .logo {
+          flex: 0 0 55px; }
       .page > .header .menu .sub-menu {
         font-size: 0.89rem;
         border-left: 5px solid #214A8F;
         min-width: 230px; }
+        .page > .header .menu .sub-menu .logo {
+          flex: 0 0 55px; }
       .page > .header .menu > li > a, .page > .header .menu > li.first > a {
         font-size: 1rem;
         font-weight: 500;
         padding: 1rem 2rem; }
+      .page > .header .menu-bkg {
+        justify-content: normal; }
       .page > .header .language a {
         font-size: 1rem;
         font-weight: 500; } }

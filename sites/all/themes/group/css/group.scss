@@ -61,17 +61,18 @@ html {
     }
   }
   .col-1 {
-    flex: 1 0 auto;
+    flex: 0 0 auto;
     padding-right: 30px;
   }
-  .col-2 { flex: 0 0 $header-height; }
+  .col-2 { flex: 1 0 auto; }
   .branding {
     background-color: $brand-color;
-    height: 100%; width: 100%;
+    height: 100%; width: 270px;                     // определяет ширину брендовой части меню
     color: #fff; font-size: .8rem;
+    .logo { flex: 0 0 41px; }
   }
   .menu-bkg {
-    display:grid;
+    display:grid; justify-content: flex-end;
     background: rgba(27, 30, 40, 0.4);
     height: 100%;
   }
@@ -95,24 +96,28 @@ html {
     color: #fff; font-size: $font-size-h6;
     padding: 1rem .8rem;
   }
-  .nav-mobile-label { justify-self: end; }
+  .nav-mobile-label { position: relative; }
 
   @media #{$tablet} {
+    .branding {
+      width: 300px;
+      padding: 15px 30px;
+    }
   }
   @media #{$laptop} {
     height: 90px;
-    .col-1 { flex: 0 0 auto; }
-    .col-2 { flex: 1 0 auto; }
     .branding {
       font-size: 1rem;
       padding: 15px 30px 15px 1rem;
-      width: 360px;                     // определяет ширину брендовой части меню
+      width: 360px;
+      .logo { flex: 0 0 55px; }
     }
     .menu {
       .sub-menu {
         font-size: $font-size-small;
         border-left: 5px solid $brand-color;
         min-width: 230px;
+        .logo { flex: 0 0 55px; }
       }
       > li {
         > a, &.first > a {
@@ -121,6 +126,7 @@ html {
         }
       }
     }
+    .menu-bkg { justify-content: normal; }
     .language a {
       font-size: $font-size-h5; font-weight: 500;
     }
