@@ -1426,8 +1426,7 @@ ul.menu {
   align-items: center;
   text-align: center; }
   .branding a {
-    color: inherit;
-    white-space: nowrap; }
+    color: inherit; }
   .branding .brand {
     flex: 1 0 auto; }
   .branding .name {
@@ -1655,8 +1654,19 @@ ul.menu {
     font-size: 2.22rem; }
   .node-news.node-full .header {
     margin-bottom: 2rem; }
-  .node-news.node-full .image img {
-    min-width: 100%; }
+  .node-news.node-full .image {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .node-news.node-full .image img {
+      max-height: 100%; }
+  @media only screen and (min-width: 768px) {
+    .node-news.node-full .image {
+      min-height: 250px;
+      height: 500px; } }
+  @media only screen and (min-width: 1366px) {
+    .node-news.node-full .image {
+      height: 700px; } }
 .node-news.node-teaser {
   border-bottom: 1px solid #ADADAD;
   margin-bottom: 3rem;

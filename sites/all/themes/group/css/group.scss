@@ -23,7 +23,7 @@ html {
   display: flex; align-items: center;
   text-align: center;
   a {
-    color: inherit; white-space: nowrap;
+    color: inherit;
   }
   .brand { flex: 1 0 auto; }
   .name { font-size: 1.7em; font-weight: 700; text-transform: uppercase; }
@@ -258,7 +258,19 @@ html {
     padding-bottom: 2rem;
     h1 { font-size: $font-size-h2; }
     .header { margin-bottom: 2rem; }
-    .image img { min-width: 100%; }
+    .image {
+      display: flex; align-items: center; justify-content: center;
+      img { max-height: 100%; }
+    }
+
+    @media #{$tablet} {
+      .image {
+        min-height: 250px; height: 500px;
+      }
+    }
+    @media #{$laptop} {
+      .image { height: 700px; }
+    }
   }
 
   &.node-teaser {
@@ -277,6 +289,7 @@ html {
       color: $brand-color;
       margin-bottom: 1rem;
     }
+
     @media #{$tablet} {
       padding-bottom: 3rem;
       h2 { margin-top: 0; }

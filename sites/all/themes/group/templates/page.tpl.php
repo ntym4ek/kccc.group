@@ -23,10 +23,10 @@
             <div class="col col-1 full-height col-no-gutter">
               <div class="branding">
                   <div class="brand">
-                    <div class="name"><a href="<?php print $front_page ?>">KCCC GROUP</a></div>
-                    <div class="slogan"><?php print t('Innovative Chemical Holding'); ?></div>
+                    <div class="name nowrap"><a href="/">KCCC GROUP</a></div>
+                    <div class="slogan"><a href="/"><?php print t('Innovative Chemical Holding'); ?></a></div>
                   </div>
-                <div class="logo"><a href="<?php print $front_page ?>"><img src="<?php print $logo ?>" /></a></div>
+                <div class="logo"><a href="/"><img src="<?php print $logo ?>" /></a></div>
               </div>
             </div>
             <div class="col col-2 full-height col-no-gutter">
