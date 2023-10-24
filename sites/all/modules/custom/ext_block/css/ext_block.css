@@ -135,16 +135,19 @@
     text-align: center; }
   @media only screen and (min-width: 768px) {
     .block-news .text {
-      padding: 1rem 2rem 2rem 2rem;
+      padding: 1rem 1rem 3rem 1rem;
       min-height: 16rem; }
     .block-news .more {
       position: absolute;
       bottom: 1rem;
-      left: 2rem; }
+      left: 1rem; }
     .block-news .more-all {
       position: absolute;
       top: .8rem;
       right: 2rem; } }
+  @media only screen and (min-width: 1366px) {
+    .block-news .text {
+      min-height: 18rem; } }
 
 .block-quality .screen-width .container {
   padding: 0; }

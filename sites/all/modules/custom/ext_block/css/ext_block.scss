@@ -138,13 +138,17 @@
   .more-all {
     color: $brand-color; font-size: $font-size-large; text-align: center;
   }
+
   @media #{$tablet} {
     .text {
-      padding: 1rem 2rem 2rem 2rem;
+      padding: 1rem 1rem 3rem 1rem;
       min-height: 16rem;
     }
-    .more { position: absolute; bottom: 1rem; left: 2rem; }
+    .more { position: absolute; bottom: 1rem; left: 1rem; }
     .more-all { position: absolute; top: .8rem; right: 2rem; }
+  }
+  @media #{$laptop} {
+    .text { min-height: 18rem; }
   }
 }
 
