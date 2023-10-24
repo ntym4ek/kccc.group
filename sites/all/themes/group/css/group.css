@@ -1800,6 +1800,12 @@ i.icon {
   color: #ccc;
   font-size: 0.8rem; }
 
+.hover-raise {
+  transition: all 200ms; }
+  .hover-raise:hover {
+    box-shadow: 1px 3px 17px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px); }
+
 .form-item label,
 .form-item .label {
   color: #333;
