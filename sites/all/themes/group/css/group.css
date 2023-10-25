@@ -1662,11 +1662,7 @@ ul.menu {
       max-height: 100%; }
   @media only screen and (min-width: 768px) {
     .node-news.node-full .image {
-      min-height: 250px;
-      height: 500px; } }
-  @media only screen and (min-width: 1366px) {
-    .node-news.node-full .image {
-      height: 700px; } }
+      min-height: 250px; } }
 .node-news.node-teaser {
   border-bottom: 1px solid #ADADAD;
   margin-bottom: 3rem;

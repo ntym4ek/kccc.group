@@ -265,11 +265,10 @@ html {
 
     @media #{$tablet} {
       .image {
-        min-height: 250px; height: 500px;
+        min-height: 250px;
       }
     }
     @media #{$laptop} {
-      .image { height: 700px; }
     }
   }
 

@@ -100,10 +100,10 @@
             <div class="swiper-wrapper">
               <?php foreach ($images as $key => $image) {
                 print '<div class="swiper-slide">'  .
-                  '<div class="image">' .
-                  drupal_render($image) .
-                  '</div>' .
-                  '</div>';
+                        '<div class="image">' .
+                          drupal_render($image) .
+                        '</div>' .
+                      '</div>';
               } ?>
             </div>
           </div>
