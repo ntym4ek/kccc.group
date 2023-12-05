@@ -177,7 +177,6 @@ ul.menu {
   // меню слева
   &.nav-mobile-left {
     .nav-mobile-label {
-      //left: calc(#{$menu-mobile-width} * 0.99);
 
       .label .icon {
         transition: 0.5s;
@@ -190,7 +189,6 @@ ul.menu {
   // меню справа
   &.nav-mobile-right {
     .nav-mobile-label {
-      //right: calc(#{$menu-mobile-width} * 0.99);
 
       .label .icon {
         transition: 0.5s;

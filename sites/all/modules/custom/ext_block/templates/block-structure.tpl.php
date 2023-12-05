@@ -40,7 +40,7 @@
       <a href="https://eva-si.ru" target="_blank">
         <div class="division hover-raise">
           <div class="logo"><img src="/sites/all/modules/custom/ext_block/images/logo-eva.png" alt=""></div>
-          <div class="name"><?php print t("“Eva” LLC"); ?></div>
+          <div class="name"><?php print t("“EVA” LLC"); ?></div>
         </div>
       </a>
     </div>
