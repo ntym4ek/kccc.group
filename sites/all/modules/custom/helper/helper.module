@@ -49,7 +49,7 @@ function helper_get_divisions()
       $offers[] = [
         'title' => $term->name,
         'img' => file_create_url($term->field_image["und"][0]["uri"]),
-        'path' => $term->field_text_link["und"][0]["safe_value"],
+        'path' => url($term->field_text_link["und"][0]["safe_value"]),
       ];
     }
   }

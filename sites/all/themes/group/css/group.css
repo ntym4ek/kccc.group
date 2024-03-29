@@ -1146,8 +1146,8 @@ fieldset {
     height: 1.61rem;
     text-transform: initial; }
   .btn.btn-wide {
-    padding-left: 2rem;
-    padding-right: 2rem; }
+    padding-left: 3rem;
+    padding-right: 3rem; }
   .btn.btn-full-wide {
     width: 100%; }
 
@@ -1581,7 +1581,8 @@ ul.menu {
 .page > .footer {
   padding: 2rem 0; }
   .page > .footer .branding {
-    height: 65px; }
+    height: 65px;
+    padding: 0; }
   .page > .footer .menu {
     margin-top: 2rem; }
   .page > .footer .title {

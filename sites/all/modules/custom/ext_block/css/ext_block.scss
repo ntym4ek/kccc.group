@@ -1,5 +1,22 @@
 @import "../../../../themes/group/css/variables"; // продублировано из styles.scss, чтобы переменные не подсвечивались
 
+.block {
+  h2 {
+    text-transform: uppercase;
+    margin-top: 0;
+  }
+  .block-row:not(:last-child) { margin-bottom: 2rem; }
+  .well {
+    background: $well-bkg-clr;
+    padding: 2rem 0;
+  }
+
+  @media #{$tablet} {
+    .block-row:not(:last-child) { margin-bottom: 3rem; }
+    .well { padding: 3rem 0; }
+  }
+}
+
 .section-title {
   font-size: $font-size-h2*.9; text-align: center;
   margin-bottom: 3rem;
@@ -280,10 +297,12 @@
   }
 }
 
-.block-structure {
+.block-structure,
+.block-oils {
   .division {
-    border: 2px solid #ADADAD;
+    border: 2px solid $text-muted;
     display: flex; flex-direction: column;justify-content: space-between;
+    color: $text-color; text-align: center;
     padding: 1rem 3rem;
     min-height: 200px;
     margin-bottom: 2rem;
@@ -295,13 +314,18 @@
   .name {
     color: $text-color; font-size: $font-size-large; text-align: center;
     display: flex; justify-content: center; align-items: center;
-    height: 50px;
   }
+  a.btn { margin-top: 2rem; }
+  .image { margin-bottom: 1rem; }
+
   @media #{$tablet} {
     .division { padding: 1rem; }
+    a.btn { margin-top: 2rem; }
+    .name { height: 50px; }
+    .image { margin-bottom: 0; }
   }
   @media #{$laptop} {
-    .division { padding: 1rem 3rem; }
+    .division { padding: 2rem 3rem; }
   }
 }
 

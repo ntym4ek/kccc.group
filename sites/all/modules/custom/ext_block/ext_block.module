@@ -45,6 +45,9 @@ function ext_block_block_info()
     'custom-block-job' => [
       'info' => t('CB | Job'),
     ],
+    'custom-block-oils' => [
+      'info' => t('CB | Oils'),
+    ],
   ];
 }
 
@@ -147,6 +150,10 @@ function ext_block_theme()
     'custom-block-job' => [
       'variables' => [],
       'template' => 'templates/block-job',
+    ],
+    'custom-block-oils' => [
+      'variables' => [],
+      'template' => 'templates/block-oils',
     ],
   ];
 }

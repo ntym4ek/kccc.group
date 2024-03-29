@@ -1,3 +1,17 @@
+.block h2 {
+  text-transform: uppercase;
+  margin-top: 0; }
+.block .block-row:not(:last-child) {
+  margin-bottom: 2rem; }
+.block .well {
+  background: #E1EBF1;
+  padding: 2rem 0; }
+@media only screen and (min-width: 768px) {
+  .block .block-row:not(:last-child) {
+    margin-bottom: 3rem; }
+  .block .well {
+    padding: 3rem 0; } }
+
 .section-title {
   font-size: 1.998rem;
   text-align: center;
@@ -263,33 +277,54 @@
   .block-advantages-2 .b22 {
     padding: 2rem 0 0 2rem; } }
 
-.block-structure .division {
-  border: 2px solid #ADADAD;
+.block-structure .division,
+.block-oils .division {
+  border: 2px solid #ccc;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  color: #333;
+  text-align: center;
   padding: 1rem 3rem;
   min-height: 200px;
   margin-bottom: 2rem; }
-.block-structure .logo {
+.block-structure .logo,
+.block-oils .logo {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100px; }
-.block-structure .name {
+.block-structure .name,
+.block-oils .name {
   color: #333;
   font-size: 1.11rem;
   text-align: center;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 50px; }
+  align-items: center; }
+.block-structure a.btn,
+.block-oils a.btn {
+  margin-top: 2rem; }
+.block-structure .image,
+.block-oils .image {
+  margin-bottom: 1rem; }
 @media only screen and (min-width: 768px) {
-  .block-structure .division {
-    padding: 1rem; } }
+  .block-structure .division,
+  .block-oils .division {
+    padding: 1rem; }
+  .block-structure a.btn,
+  .block-oils a.btn {
+    margin-top: 2rem; }
+  .block-structure .name,
+  .block-oils .name {
+    height: 50px; }
+  .block-structure .image,
+  .block-oils .image {
+    margin-bottom: 0; } }
 @media only screen and (min-width: 1366px) {
-  .block-structure .division {
-    padding: 1rem 3rem; } }
+  .block-structure .division,
+  .block-oils .division {
+    padding: 2rem 3rem; } }
 
 .block-growth .screen-width {
   background: #E1EBF1;

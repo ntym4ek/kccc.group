@@ -31,7 +31,7 @@
           <a href="mailto:strada_opt@kccc.ru" class="email">strada_opt@kccc.ru</a>
         </div>
         <div class="contact">
-          <div class="name"><?php print t("“Eva” LLC"); ?></div>
+          <div class="name"><?php print t("“EVA” LLC"); ?></div>
           <a href="tel:+74957443944" class="phone">+7 (495) 744-39-44</a>
           <a href="mailto:info@eva-si.ru" class="email">info@eva-si.ru</a>
         </div>

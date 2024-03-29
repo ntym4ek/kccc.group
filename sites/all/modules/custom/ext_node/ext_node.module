@@ -41,6 +41,9 @@ function ext_node_preprocess_node(&$vars)
     $vars['date'] = date('d.m.Y', $node->created);
     $vars['stats'] = statistics_get($node->nid);
   }
+
+  // -- Полная ссылка для шар
+  $vars['node_url_full'] = $GLOBALS['base_url'] . '/' . drupal_get_path_alias('node/' . $node->nid);
 }
 
 /**

@@ -37,8 +37,8 @@
                     <div class="primary-menu">
                       <?php if ($primary_nav): print $primary_nav; endif; ?>
                     </div>
-                    <div class="language"><?php if ($language_select): print $language_select; endif; ?></div>
                     <div class="secondary-menu"><?php if ($secondary_nav): print $secondary_nav; endif; ?></div>
+                    <div class="language"><?php if ($language_select): print $language_select; endif; ?></div>
                   </div>
                 </div>
               </div>

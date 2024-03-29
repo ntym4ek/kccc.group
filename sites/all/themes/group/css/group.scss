@@ -188,7 +188,10 @@ html {
 // -- footer
 .page > .footer {
   padding: 2rem 0;
-  .branding { height: 65px; }
+  .branding {
+    height: 65px;
+    padding: 0;
+  }
   .menu { margin-top: 2rem; }
   .title { font-size: $font-size-large; font-weight: 700; }
   ul {
