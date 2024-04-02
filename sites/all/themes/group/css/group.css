@@ -1731,7 +1731,7 @@ ul.menu {
       .menu-wr .menu > li > a.active, .menu-wr .menu > li > a:focus, .menu-wr .menu > li > a.active-trail {
         color: #fff; }
       .menu-wr .menu > li > a:hover {
-        color: #214A8F; }
+        color: #ccc; }
     > .menu-wr .menu > li.first a {
       padding-left: 0; }
   .menu-wr .sub-menu {
@@ -1968,7 +1968,8 @@ ul.menu {
   font-size: 1.5003rem;
   text-align: center;
   text-transform: uppercase;
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem;
+  padding: 0 2rem; }
   @media only screen and (min-width: 1024px) {
     .section-title {
       font-size: 1.667rem; } }
@@ -2442,7 +2443,7 @@ ul.menu {
     color: #fff;
     transition: color 200ms; }
     .page > .header .language-switch a:hover {
-      color: #214A8F; }
+      color: #ccc; }
   @media only screen and (min-width: 768px) {
     .page > .header .branding {
       width: 315px;
@@ -2646,6 +2647,9 @@ ul.menu {
     font-size: 1.222rem;
     font-weight: 500;
     margin-bottom: .5rem; }
+
+.view-news .views-widget-filter-date_filter {
+  min-width: 100px; }
 
 a {
   color: #214A8F;

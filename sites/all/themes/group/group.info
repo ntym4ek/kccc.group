@@ -6,5 +6,3 @@ base theme = cbtheme
 
 stylesheets[all][] = css/group.css
 
-scripts[] = js/group.js
-

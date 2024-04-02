@@ -44,7 +44,7 @@
     </div>
     <div class="col-xs-12 col-md-7">
       <div class="b2">
-        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=mymaps%3AdR77aJfcjhmbj1x-jz4BO2Fgt_bXyhkL&amp;width=100%25&amp;height=570&amp;lang=ru_RU&amp;scroll=true"></script>
+        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=mymaps%3AdR77aJfcjhmbj1x-jz4BO2Fgt_bXyhkL&amp;width=100%25&amp;height=550&amp;lang=ru_RU&amp;scroll=true"></script>
       </div>
     </div>
   </div>

@@ -92,7 +92,7 @@
   }
   .language-switch a {
     color: #fff; transition: color 200ms;
-    &:hover { color: $brand-color; }
+    &:hover { color: $menu-item-hover-color; }
   }
 
   @media #{$pad} {
@@ -254,7 +254,6 @@
   }
 }
 
-
 // -- node
 .node-news {
   .info { color: $text-muted; }
@@ -318,6 +317,12 @@
   }
 }
 
+.view-news {
+  .views-widget-filter-date_filter {
+    min-width: 100px;
+  }
+}
+
 // -- helper
 a {
   color: $brand-color; text-decoration: none;
@@ -347,6 +352,7 @@ a {
   }
   &.open a { margin-left: 0; }
 }
+
 
 i.icon {
   display: inline-block;
