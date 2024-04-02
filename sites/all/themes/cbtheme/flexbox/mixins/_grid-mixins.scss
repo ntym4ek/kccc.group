@@ -5,7 +5,7 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  flex: 0 1 auto;
+  flex: 1 1 auto; // изначально flex: 0 1 auto, но такой row устанавливался не на всю ширину, если содержимое не имеет нужной ширины
   flex-direction: row;
   flex-wrap: wrap;
   // // Overrides flexbox's default behavior of making all children equal height
@@ -53,10 +53,19 @@
   }
 } // Condition to run inside of the col mixin * not for developer use *
 
-@mixin col($breakpoint: "xs", $col-number: "auto") {
+@mixin col($breakpoint: "min", $col-number: "auto") {
   // If no breakpoint is passed and a col number is just use the first arg as the col number and act like xs
+  // min - колонка свободной ширины
+  // fill - заполнить ширину
+
   @if type-of($breakpoint) == number {
     $col-number: $breakpoint;
+    @include col-condition($col-number);
+  } @else if $breakpoint == "min" {
+    max-width: 100%; // col будет колонка свободной ширины
+    padding: 0 $gutter;
+    flex: 0 0 auto;
+  } @else if $breakpoint == "fill" {
     @include col-condition($col-number);
   } @else if $breakpoint == "xs" {
     @include col-condition($col-number);
@@ -86,7 +95,7 @@
   @if type-of($offset-number) != number {
     @warn "Column offset number must be a number (only arg or second arg in the col mixin)";
   } @else if $offset-number == 0 {
-    @warn "Column offset number must be greater than 0 and less than or equal to total number of columns in the grid (#{$grid-columns})";
+    margin-left: 0;
   } @else if $offset-number > $grid-columns {
     @warn "Column offset number must be greater than 0 and less than or equal to total number of columns in the grid (#{$grid-columns})";
   } @else {

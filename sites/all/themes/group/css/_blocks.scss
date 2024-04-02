@@ -1,8 +1,8 @@
-@import "../../../../themes/group/css/variables"; // продублировано из styles.scss, чтобы переменные не подсвечивались
+@import "variables"; // продублировано из styles.scss, чтобы переменные не подсвечивались
 
 .block {
   h2 {
-    text-transform: uppercase;
+    font-weight: 400; text-transform: uppercase;
     margin-top: 0;
   }
   .block-row:not(:last-child) { margin-bottom: 2rem; }
@@ -18,8 +18,9 @@
 }
 
 .section-title {
-  font-size: $font-size-h2*.9; text-align: center;
-  margin-bottom: 3rem;
+  font-size: $font-size-h2*.9; text-align: center; text-transform: uppercase;
+  margin-bottom: 2rem;
+
   @media #{$tablet} {
     font-size: $font-size-h2;
   }
@@ -28,7 +29,7 @@
 .block-front-banner {
   .swiper-slide {
     height: 635px;
-    .img {
+    .image {
       position: absolute; top:0; bottom: 0;left:0; right: 0; z-index: 1;
       background-size: cover; background-position: center;
     }
@@ -67,7 +68,7 @@
     }
     .text-wr {
       margin-top: 210px; padding-left: 0;
-      max-width: 500px;
+      max-width: 880px;
       h2 {
         font-size: 60px;
         margin: 30px 0;
@@ -85,24 +86,34 @@
 
 .block-kccc-group {
   .b1 {
-    background-image: url(../images/kccc-1.jpg); background-size: cover; background-position: center center;
+    background-image: url(../../../modules/custom/ext_block/images/kccc-1.jpg); background-size: cover; background-position: center center;
     height: 100%;
     min-height: 230px;
+    margin-top: 1rem;
   }
   // на странице /about другая картинка
   .page-node-1 & {
     b { font-weight: 400; }
-    .b1 { background-image: url(../images/kccc-2.jpg); }
+    .b1 { background-image: url(../../../modules/custom/ext_block/images/kccc-2.jpg); }
+  }
+
+  @media #{$pad} {
+    .b1 { margin-top: 0; }
   }
 }
 
 .block-job {
   .b1 {
-    background-image: url(../images/job.jpg); background-size: cover; background-position: center center;
+    background-image: url(../../../modules/custom/ext_block/images/job.jpg); background-size: cover; background-position: center center;
     height: 100%;
     min-height: 230px;
+    margin-top: 1rem;
   }
   h2 { margin-top: 0; }
+
+  @media #{$pad} {
+    .b1 { margin-top: 0; }
+  }
 }
 
 .block-video {
@@ -120,6 +131,7 @@
     font-size: $font-size-h3;
     padding: 2rem 0;
   }
+
   @media #{$tablet} {
     background: $brand-color;
     .screen-width {
@@ -141,7 +153,7 @@
   background: #fff;
   position: relative;
   a { color: inherit; text-decoration: none; }
-  .img img {
+  .image img {
     display: block;
     width: 100%;
   }
@@ -150,10 +162,10 @@
     font-size: $font-size-h3; font-weight: 500;
   }
   .more {
-    color: $brand-color; font-size: $font-size-large;
+    color: $brand-color; font-weight: 500;
   }
   .more-all {
-    color: $brand-color; font-size: $font-size-large; text-align: center;
+    color: $brand-color; font-size: $font-size-base; text-align: center; text-transform: initial;
   }
 
   @media #{$tablet} {
@@ -189,7 +201,7 @@
     li { margin-bottom: 1rem; }
   }
   .b2, .b3 {
-    .img img {
+    .image img {
       display: block;
       width: 100%;
     }
@@ -240,8 +252,9 @@
     background: $well-bkg-clr;
     padding: 2rem 0;
   }
+  .b1 { margin-bottom: 1rem; }
   .b11 {
-    background-image: url(../images/a-11.jpg); background-size: cover; background-position: center center;
+    background-image: url(../../../modules/custom/ext_block/images/a-11.jpg); background-size: cover; background-position: center center;
     min-height: 230px;
     height: 100%;
     img {
@@ -256,11 +269,13 @@
     height: 100%;
   }
   .b21 {
-    background-image: url(../images/a-12.jpg); background-size: cover; background-position: center center;
+    background-image: url(../../../modules/custom/ext_block/images/a-12.jpg); background-size: cover; background-position: center center;
     min-height: 230px;
   }
   .b22 { padding: $gutter*2 0; }
+
   @media #{$tablet} {
+    .b1 { margin-bottom: 0; }
     .b21 { min-height: 300px; }
     .b22 { padding: $gutter*2 0 0 $gutter*2; }
   }
@@ -271,8 +286,9 @@
     background: $well-bkg-clr;
     padding: 2rem 0;
   }
+  .b1 { margin-bottom: 1rem; }
   .b11 {
-    background-image: url(../images/a-21.jpg); background-size: cover; background-position: center center;
+    background-image: url(../../../modules/custom/ext_block/images/a-21.jpg); background-size: cover; background-position: center center;
     min-height: 230px;
     height: 100%;
     img {
@@ -287,11 +303,13 @@
     height: 100%;
   }
   .b21 {
-    background-image: url(../images/a-22.jpg); background-size: cover; background-position: center center;
+    background-image: url(../../../modules/custom/ext_block/images/a-22.jpg); background-size: cover; background-position: center center;
     min-height: 230px;
   }
   .b22 { padding: $gutter*2 0; }
+
   @media #{$tablet} {
+    .b1 { margin-bottom: 0; }
     .b21 { min-height: 300px; }
     .b22 { padding: $gutter*2 0 0 $gutter*2; }
   }
@@ -310,22 +328,35 @@
   .logo {
     display: flex; justify-content: center; align-items: center;
     min-height: 100px;
+    margin-bottom: 1rem;
   }
   .name {
-    color: $text-color; font-size: $font-size-large; text-align: center;
+    color: $text-color; font-weight: 500; text-align: center;
     display: flex; justify-content: center; align-items: center;
   }
   a.btn { margin-top: 2rem; }
-  .image { margin-bottom: 1rem; }
 
   @media #{$tablet} {
     .division { padding: 1rem; }
     a.btn { margin-top: 2rem; }
     .name { height: 50px; }
-    .image { margin-bottom: 0; }
+    .image { margin: 0; }
   }
   @media #{$laptop} {
     .division { padding: 2rem 3rem; }
+  }
+}
+
+.block-oils {
+  .block-row-1 .image,
+  .block-row-3 .image,
+  .block-row-5 .image  { margin-bottom: 1rem; }
+  .block-row-2 .image,
+  .block-row-6 .image,
+  .block-row-4 .image { margin-top: 1rem; }
+
+  @media #{$tablet} {
+    .image { margin: 0!important; }
   }
 }
 
@@ -367,3 +398,7 @@
     .b2 { max-height: 570px; }
   }
 }
+
+#block-ext-block-custom-block-quality { margin-bottom: 0; }
+#block-ext-block-custom-block-oils { margin-bottom: 0; }
+#block-webform-client-block-10 { margin-bottom: 0; }

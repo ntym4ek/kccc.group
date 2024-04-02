@@ -6,7 +6,7 @@
     <div class="col-xs-12">
       <div class="section-title">
         <div><?php print t('Latest news'); ?></div>
-        <div class="more-all"><a href="/<?php print $GLOBALS['language']->language; ?>/news"><?php print t('Show all') .' >'; ?></a></div>
+        <div class="more-all"><a href="<?php print url('news'); ?>"><?php print t('Show all') .' >'; ?></a></div>
       </div>
     </div>
   </div>
@@ -19,7 +19,7 @@
             <?php foreach ($cards as $card): ?>
               <div class="swiper-slide">
                 <a href="<?php print $card['path']; ?>">
-                  <div class="img"><img src="<?php print $card['img']; ?>" alt=""></div>
+                  <div class="image"><img src="<?php print $card['img']; ?>" alt=""></div>
                   <div class="text">
                     <div class="title"><?php print $card['title']; ?></div>
                     <p><?php print $card['text']; ?></p>

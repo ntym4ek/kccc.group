@@ -28,25 +28,31 @@
   <tr>
     <td align="center">
       <table style="width: 800px; max-width: 800px;">
+
         <tr>
-          <td style="border-bottom: 1px solid #ccc; display: flex; align-items: center; padding-bottom: 10px; height: 70px;">
-            <img src="<?php print $logo; ?>" style=" display: inline-block; max-width: 100%; max-height: 100%;">
-            <div style="display: inline-block; font-weight: 500; margin: 0 0 0 1rem; vertical-align: middle;"><?php print $site_name; ?></div>
+          <td style="padding: 10px 10px 10px 20px; height: 70px; ">
+            <img src="<?php print $logo_mail; ?>" style="display: block; max-width: 100%; max-height: 100%;">
+          </td>
+          <td style="padding: 10px 0; height: 70px; vertical-align: middle; font-weight: 700; ">
+            <?php print $site_name; ?>
           </td>
         </tr>
+
         <tr>
-          <td style="border-bottom: 1px solid #ccc; padding: 20px; height:300px; vertical-align: top;">
+          <td colspan="2" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; padding: 20px; height:300px; vertical-align: top;">
             <?php print $body; ?>
           </td>
         </tr>
+
         <tr>
-          <td style="padding: 20px;">
+          <td colspan="2" style="font-size: .8em; padding: 10px 20px;">
             <?php print $sign; ?><br />
             <?php if ($notice): ?>
-              <span style="color: #bbb; font-size: .8em;"><?php print $notice; ?></span>
+              <span style="color: #bbb;"><?php print $notice; ?></span>
             <?php endif; ?>
           </td>
         </tr>
+
       </table>
     </td>
   </tr>

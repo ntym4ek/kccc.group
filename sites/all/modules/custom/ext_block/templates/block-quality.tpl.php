@@ -27,7 +27,7 @@
         </div>
         <div class="col-xs-12 col-md-4">
           <div class="b2">
-            <div class="img"><img src="/sites/all/modules/custom/ext_block/images/quality-1.jpg" alt=""></div>
+            <div class="image"><img src="/sites/all/modules/custom/ext_block/images/quality-1.jpg" alt=""></div>
             <div class="text">
               <p><?php print t("The laboratory is&nbsp;certified in&nbsp;accordance with Russian legislation."); ?></p>
               <p><?php print t("It uses modern high-precision equipment from the world's best manufacturers."); ?></p>
@@ -36,7 +36,7 @@
         </div>
         <div class="col-xs-12 col-md-4">
           <div class="b3">
-            <div class="img"><img src="/sites/all/modules/custom/ext_block/images/quality-2.jpg" alt=""></div>
+            <div class="image"><img src="/sites/all/modules/custom/ext_block/images/quality-2.jpg" alt=""></div>
             <div class="text">
               <p><?php print t("Focusing on&nbsp;new European trends and growth drivers, we&nbsp;are&nbsp;constantly intensifying production and&nbsp;mastering new types of&nbsp;products."); ?></p>
               <p><?php print t("Our accumulated knowledge allows us to&nbsp;create highly effective products that can really solve complex problems."); ?></p>

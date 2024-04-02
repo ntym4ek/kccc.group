@@ -84,12 +84,6 @@ function ext_block_block_view($delta = '')
     $block['content'] = theme($delta);
   }
 
-  // общее для программных блоков
-  if (strpos($delta, 'custom-block-') === 0) {
-    $block['subject'] = null;
-    drupal_add_css(drupal_get_path('module', 'ext_block') . '/css/ext_block.css');
-  }
-
   return $block;
 }
 

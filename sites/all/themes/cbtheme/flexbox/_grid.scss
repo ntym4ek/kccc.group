@@ -75,6 +75,8 @@
       max-width: 100% / $grid-columns * $i;
       padding: 0 $gutter;
     }
+  }
+  @for $i from 0 through $grid-columns {
     .col-#{$thisPrefix}-offset-#{$i} {
       margin-left: 100% / $grid-columns * $i;
     }

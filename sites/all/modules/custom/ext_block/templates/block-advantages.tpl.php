@@ -14,7 +14,7 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="row row-no-gutter">
-        <div class="col-xs-12 col-md-8 col-no-gutter">
+        <div class="col-xs-12 col-lg-8 col-no-gutter b1">
           <div class="row row-no-gutter full-height">
             <div class="col-xs-12 col-md-6 col-no-gutter">
               <div class="b11"></div>
@@ -28,7 +28,7 @@
             </div>
           </div>
         </div>
-        <div class="col-xs-12 col-md-4 col-no-gutter">
+        <div class="col-xs-12 col-lg-4 col-no-gutter">
           <div class="row row-no-gutter">
             <div class="col-xs-12 col-no-gutter">
               <div class="b21"></div>

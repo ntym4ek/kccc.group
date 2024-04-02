@@ -17,32 +17,41 @@ function group_preprocess_page(&$vars)
     ], 'description');
   }
 
+  $vars['banner_title'] = '';
+
   // -- Баннер в шапке
+  $banner_uri = '';
   if (isset($vars['node']) && $vars['node']->type == 'page') {
-    $vars['title'] = '';
-    $vars['is_title_as_banner'] = true;
+//    $vars['title'] = '';
     unset($vars["page"]["content"]["system_main"]);
     if (!empty($vars["node"]->field_image_banner)) {
-      $vars['title_background'] = file_create_url($vars["node"]->field_image_banner['und'][0]['uri']);
+      $banner_uri = $vars["node"]->field_image_banner['und'][0]['uri'];
     }
   } elseif (isset($vars['node']) && $vars['node']->type == 'news') {
-    $vars['title'] = '';
+//    $vars['title'] = '';
   } elseif ($_GET['q'] == 'news') {
-    $vars['title'] = '';
-    $vars['is_title_as_banner'] = true;
-    $vars['title_background'] = file_create_url('public://images/page-banners/news.jpg');
+    $banner_uri = 'public://images/page-banners/news.jpg';
   } elseif ($_GET['q'] == 'job') {
-    $vars['title'] = '';
-    $vars['is_title_as_banner'] = true;
-    $vars['title_background'] = file_create_url('public://images/page-banners/job.jpg');
+    $banner_uri = 'public://images/page-banners/job.jpg';
+  }
+  if ($banner_uri) {
+    $vars['is_banner_on'] = true;
+    $vars['is_title_on'] = false;
+//    $vars['banner_title_prefix'] = '';
+//    $vars['banner_title'] = '';
+//    $vars['banner_title_suffix'] = '';
+    $vars['banner_url'] = file_create_url($banner_uri);
+    $vars['banner_mobile_url'] = image_style_url('banner_mobile', $banner_uri);
   }
 
-  // -- выбор языка в меню
-  $languages = language_list();
-  $lang = $GLOBALS['language']->language == 'ru' ? 'en' : 'ru';
-  $title = $lang == 'ru' ? 'RU' : 'EN';
-  $url = current_path();
-  $vars['language_select'] = l($title, $url, ['language' => $languages[$lang]]);
+  // -- Переключатель языка
+  $path = drupal_is_front_page() ? '<front>' : $_GET['q'];
+  if ($links = language_negotiation_get_switch_links('language', $path)) {
+    $lang = $GLOBALS["language"]->language == 'ru' ? 'en' : 'ru';
+    $title = $lang == 'ru' ? 'RU' : 'EN';
+    $vars['language_link'] = l($title, $links->links[$lang]['href'], $links->links[$lang] + ['html' => TRUE]);
+    $vars['language_link_mobile'] = l($lang == 'en' ? 'English' : 'Русский', $links->links[$lang]['href'], $links->links[$lang]);
+  }
 }
 
 

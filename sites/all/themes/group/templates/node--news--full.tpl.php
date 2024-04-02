@@ -83,7 +83,7 @@
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
   <div class="row">
-    <div class="col-xs-12 col-md-8">
+    <div class="col-xs-12 col-xl-8">
       <div class="header">
         <div class="info">
           <?php print $content["field_division"][0]["#markup"]; ?> | <?php print $date; ?>

@@ -8,7 +8,7 @@
         <div class="swiper-wrapper">
           <?php foreach ($slides as $slide): ?>
             <div class="swiper-slide">
-              <div class="img" style="background-image: url(<?php print $slide['img']; ?>);"></div>
+              <div class="image" style="background-image: url(<?php print $slide['img']; ?>);"></div>
               <div class="container">
                 <div class="text-wr">
                   <h2><?php print $slide['title']; ?></h2>

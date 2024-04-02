@@ -3,7 +3,7 @@
 ?>
 <div class="block-oils">
 
-  <div class="block-row">
+  <div class="block-row block-row-1">
     <div class="row">
       <div class="col-xs-12 col-md-4">
         <div class="image">
@@ -19,7 +19,7 @@
     </div>
   </div>
 
-  <div class="block-row">
+  <div class="block-row block-row-2">
     <div class="screen-width well">
       <div class="container">
         <div class="row">
@@ -41,7 +41,7 @@
     </div>
   </div>
 
-  <div class="block-row">
+  <div class="block-row block-row-3">
     <div class="row">
       <div class="col-xs-12 col-md-6">
         <div class="image">
@@ -60,7 +60,7 @@
     </div>
   </div>
 
-  <div class="block-row">
+  <div class="block-row block-row-4">
     <div class="screen-width well">
       <div class="container">
         <div class="row">
@@ -80,7 +80,7 @@
     </div>
   </div>
 
-  <div class="block-row">
+  <div class="block-row block-row-5">
     <div class="row">
       <div class="col-xs-12 col-md-6">
         <div class="image">
@@ -137,7 +137,7 @@
     </div>
   </div>
 
-  <div class="block-row">
+  <div class="block-row block-row-6">
     <div class="screen-width well">
       <div class="container">
         <div class="row">

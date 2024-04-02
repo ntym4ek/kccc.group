@@ -5,6 +5,10 @@
 // стили Базовой темы
 @import "../../cbtheme/css/styles";
 
+// вынесенные в отдельные файлы стили
+@import "swiper";
+@import "blocks";
+
 :root {
   --swiper-navigation-size: 44px;
   --swiper-navigation-color: #214A8F;
@@ -12,30 +16,9 @@
   --swiper-pagination-bottom: 1rem;
 }
 
-html {
-  @media #{$smartphone} { font-size: 15px; }
-  @media #{$laptop}     { font-size: 18px; }
-}
-
-.branding {
-  height: 100%; width: 300px;
-  padding: 15px;
-  display: flex; align-items: center;
-  text-align: center;
-  a {
-    color: inherit;
-  }
-  .brand { flex: 1 0 auto; }
-  .name { font-size: 1.7em; font-weight: 700; text-transform: uppercase; }
-  .slogan {
-    font-size: .85em;
-    max-width: 200px;
-    margin: 0 auto;
-  }
-  .logo {
-    height: 100%;
-    flex: 0 0 auto;
-  }
+.image img {
+  display: block;
+  width: 100%;
 }
 
 // -- висящий двойной header с лого и меню
@@ -67,51 +50,68 @@ html {
   }
   .col-2 { flex: 1 0 auto; }
   .branding {
+    display: flex; align-items: center;
     background-color: $brand-color;
+    color: #fff; line-height: 1; text-align: center;
+    padding: 15px;
     height: 100%; width: 270px;                     // определяет ширину брендовой части меню
-    color: #fff; font-size: .8rem;
-    .logo { flex: 0 0 41px; }
+
+    a { color: inherit; }
+    .brand { flex: 1 0 auto; }
+    .name { font-size: 1.7em; font-weight: 700; text-transform: uppercase; }
+    .slogan {
+      font-size: .85em;
+      max-width: 200px;
+      margin: 0 auto;
+    }
+    .logo {
+      height: 100%;
+      flex: 0 0 41px;
+      img {
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
   }
+
   .menu-bkg {
-    display:grid; justify-content: flex-end;
+    display:grid; justify-content: flex-end; align-items: center;
     background: rgba(27, 30, 40, 0.4);
     height: 100%;
     position: relative;
+    padding-right: 1rem;
   }
   .menu-wr {
     display: flex; align-items: center;
     height: 100%;
     .primary-menu { flex: 1 1 auto; }
-    .language { flex: 0 0 auto; }
+    .language-switch { flex: 0 0 auto; }
     .secondary-menu { flex: 0 0 auto; }
     .icon-user { width: 1rem; }
   }
-  .menu > li {
-    > a, &.first > a {
-      font-size: $font-size-h6;
-      padding: 1rem .8rem;
-    }
+  .language-switch a {
+    color: #fff; transition: color 200ms;
+    &:hover { color: $brand-color; }
   }
 
-  .language a {
-    display: block;
-    color: #fff; font-size: $font-size-h6;
-    padding: 1rem .8rem;
-  }
-
-  @media #{$tablet} {
+  @media #{$pad} {
     .branding {
-      width: 300px;
-      padding: 15px 30px;
+      width: 315px;
+      padding: 15px;
+      .logo { flex: 0 0 55px; }
     }
+    .menu-wr { padding-left: 2rem; }
+  }
+  @media #{$tablet} {
+    .menu-bkg { justify-content: normal; }
   }
   @media #{$laptop} {
     height: 90px;
     .branding {
       font-size: 1rem;
-      padding: 15px 30px 15px 1rem;
+      padding-right: 30px;
       width: 360px;
-      .logo { flex: 0 0 55px; }
     }
     .menu {
       .sub-menu {
@@ -122,28 +122,32 @@ html {
       }
       > li {
         > a, &.first > a {
-          font-size: $font-size-h5; font-weight: 500;
+          font-weight: 500;
           padding: 1rem 2rem;
         }
       }
     }
-    .menu-bkg { justify-content: normal; }
-    .language a {
-      font-size: $font-size-h5; font-weight: 500;
-    }
+    .language-switch a { font-weight: 500; }
   }
 }
 
-.menu-mobile-wr {
-  .language {
-    padding: 0 1rem;
-    a {
-      display: block;
-      color: #fff;
-      padding: 1rem;
-    }
+.nav-mobile {
+  .branding {
+    text-align: center;
+    .logo { margin-bottom: 1rem; }
   }
-  .menu .sub-menu { padding-left: 1rem; }
+
+  .menu-mobile-wr {
+    .language-switch {
+      padding: 0 1rem;
+      a {
+        display: block;
+        color: #fff;
+        padding: 1rem;
+      }
+    }
+    .menu .sub-menu { padding-left: 1rem; }
+  }
 }
 
 
@@ -181,46 +185,49 @@ html {
   .first a { padding-left: 0; }
 }
 
-//.main + .content.no-top {
-//  min-height: 162px;
-//}
-
-// -- footer
-.page > .footer {
+.page-footer {
   padding: 2rem 0;
   .branding {
     height: 65px;
     padding: 0;
+    .logo {
+      height: 100%;
+      img {
+        display:block;
+        max-height: 100%; max-width: 100%;
+      }
+    }
   }
   .menu { margin-top: 2rem; }
   .title { font-size: $font-size-large; font-weight: 700; }
   ul {
-    display: flex; flex-wrap:wrap;
-    padding-left: .5rem; margin-bottom: 0;
+    display: flex; flex-direction: column; flex-wrap:wrap;
+    padding-left: 0; margin-bottom: 0;
     list-style-type: none;
   }
   li {
-    flex: 0 0 265px;
+    display: flex;
     margin-bottom: 1rem;
+    a {
+      color: inherit;
+      display: block;
+      padding-right: 1rem;
+      transition: color 200ms;
+      &:hover { color: $text-muted; }
+    }
   }
-  a { color: inherit; }
   .arrow {
     background: url("../images/icons/icon-circle-arrow.svg");
     display: inline-block;
-    margin-right: 8px;
+    margin: 3px 8px 0 0;
     width: 12px; height: 12px;
   }
-  @media #{$tablet} {
+
+  @media #{$pad} {
     .branding { margin-top: 2rem; }
-    .menu { max-height: 300px; }
-    li { flex: 0 0 230px; }
   }
   @media #{$laptop} {
-    .menu {
-      font-size: 15px;
-      max-height: 200px;
-    }
-    li { flex: 0 0 240px; }
+    ul { height: 150px; }
   }
 }
 
@@ -229,20 +236,20 @@ html {
   background: #fff;
   position: relative;
   a { color: inherit; }
-  .img img {
+  .image img {
     display: block;
-    width: 100%;
+    min-height: 300px; width: 100%;
   }
   .text-wr {
     padding: 1rem 2rem 2rem 2rem;
     min-height: 10rem;
   }
   .title {
-    font-size: $font-size-large; font-weight: 500;
+    font-size: $font-size-h3; font-weight: 500;
   }
   .text { padding: 1rem 0; }
   .more {
-    color: $brand-color; font-size: $font-size-small; font-weight: 500;
+    color: $brand-color; font-weight: 500;
     position: absolute; bottom: 2rem;
   }
 }
@@ -255,7 +262,7 @@ html {
     display: inline-block;
     margin-left: 2rem;
   }
-  .img img { display: block; }
+  .image img { display: block; }
 
   &.node-full {
     padding-bottom: 2rem;
@@ -285,7 +292,7 @@ html {
     }
     .footer {
       display: flex; justify-content: space-between; flex-wrap: wrap;
-      font-size: $font-size-small; font-weight: 500;
+      font-weight: 500;
     }
     .more {
       color: $brand-color;
@@ -440,3 +447,5 @@ i.icon {
     .screen-width { padding: 3rem 0; }
   }
 }
+
+

@@ -43,7 +43,7 @@ function ext_node_preprocess_node(&$vars)
   }
 
   // -- Полная ссылка для шар
-  $vars['node_url_full'] = $GLOBALS['base_url'] . '/' . drupal_get_path_alias('node/' . $node->nid);
+  $vars['node_url_full'] = url('node/' . $node->nid, ['absolute' => true]);
 }
 
 /**

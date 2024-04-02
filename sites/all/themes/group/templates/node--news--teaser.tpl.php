@@ -83,7 +83,7 @@
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <div class="row">
     <div class="col-xs-12 col-md-4">
-      <div class="img">
+      <div class="image">
         <?php print render($content['field_images'][0]); ?>
       </div>
     </div>

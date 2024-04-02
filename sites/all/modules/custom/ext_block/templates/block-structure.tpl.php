@@ -12,13 +12,13 @@
   </div>
 
   <div class="row center-xs">
-    <div class="col-xs-12 col-md-4">
+    <div class="col-xs-12 col-md-6 col-lg-4">
       <div class="division">
         <div class="logo"><img src="/sites/all/modules/custom/ext_block/images/logo-ah.png" alt=""></div>
         <div class="name"><?php print t("Kirovo-Chepetsk plant “Agrohimikat” LLC"); ?></div>
       </div>
     </div>
-    <div class="col-xs-12 col-md-4">
+    <div class="col-xs-12 col-md-6 col-lg-4">
       <a href="https://kccc.ru"  target="_blank">
         <div class="division hover-raise">
           <div class="logo"><img src="/sites/all/modules/custom/ext_block/images/logo-td.png" alt=""></div>
