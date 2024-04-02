@@ -159,5 +159,6 @@
     </div>
   </div>
 
+  <div id="back-to-top"><i class="icon icon-124"></i></div>
 </div>
 

@@ -353,7 +353,6 @@ a {
   &.open a { margin-left: 0; }
 }
 
-
 i.icon {
   display: inline-block;
   width: 20px; height: 20px;
@@ -420,6 +419,23 @@ i.icon {
   &:hover {
     box-shadow: 1px 3px 17px rgba(0, 0, 0, 0.2);
     transform: translateY(-2px);
+  }
+}
+
+#back-to-top {
+  background: #fff;
+  border-radius: 50px;
+  border: .5rem solid #214A8F85;
+  .icon {
+    color: $brand-color; font-size: 3rem;
+    background: $brand-color; border-radius: 50px; display:block; width: 40px; height: 40px; // временно
+  }
+
+  @media #{$pad} {
+    .icon {
+      font-size: 2rem;
+      width: 30px; height: 30px; // временно
+    }
   }
 }
 

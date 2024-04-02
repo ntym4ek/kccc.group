@@ -2754,6 +2754,24 @@ i.icon {
     box-shadow: 1px 3px 17px rgba(0, 0, 0, 0.2);
     transform: translateY(-2px); }
 
+#back-to-top {
+  background: #fff;
+  border-radius: 50px;
+  border: .5rem solid #214A8F85; }
+  #back-to-top .icon {
+    color: #214A8F;
+    font-size: 3rem;
+    background: #214A8F;
+    border-radius: 50px;
+    display: block;
+    width: 40px;
+    height: 40px; }
+  @media only screen and (min-width: 768px) {
+    #back-to-top .icon {
+      font-size: 2rem;
+      width: 30px;
+      height: 30px; } }
+
 .form-item label,
 .form-item .label {
   color: #333;
