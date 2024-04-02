@@ -80,7 +80,7 @@
 .block-divisions {
   .screen-width {
     background: $well-bkg-clr;
-    padding: 3rem 0 1rem;
+    padding: 2rem 0 0;
   }
 }
 
@@ -399,6 +399,7 @@
   }
 }
 
+#block-ext-block-custom-block-news { margin-bottom: 0; }
 #block-ext-block-custom-block-quality { margin-bottom: 0; }
 #block-ext-block-custom-block-oils { margin-bottom: 0; }
 #block-webform-client-block-10 { margin-bottom: 0; }

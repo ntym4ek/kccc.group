@@ -1329,6 +1329,8 @@ fieldset {
 
   header, .page-footer, .nav-mobile, .breadcrumb, .tabs {
     display: none !important; } }
+.btn:not(:last-child) {
+  margin-right: 1rem; }
 .btn:not(.btn-link) {
   display: inline-flex;
   justify-content: center;
@@ -2027,7 +2029,7 @@ ul.menu {
 
 .block-divisions .screen-width {
   background: #E1EBF1;
-  padding: 3rem 0 1rem; }
+  padding: 2rem 0 0; }
 
 .block-kccc-group .b1 {
   background-image: url(../../../modules/custom/ext_block/images/kccc-1.jpg);
@@ -2334,6 +2336,9 @@ ul.menu {
 @media only screen and (min-width: 1366px) {
   .block-contacts-map .b2 {
     max-height: 570px; } }
+
+#block-ext-block-custom-block-news {
+  margin-bottom: 0; }
 
 #block-ext-block-custom-block-quality {
   margin-bottom: 0; }
