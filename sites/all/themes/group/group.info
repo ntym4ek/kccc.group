@@ -5,4 +5,3 @@ base theme = cbtheme
 
 stylesheets[all][] = css/group.css
 stylesheets[all][] = fonts/iconfont/styles.css
-

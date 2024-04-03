@@ -390,10 +390,8 @@
     max-height: 480px;
     overflow: hidden;
   }
-  a {
-    display: block;
-    color: inherit;
-  }
+  a { color: inherit; }
+
   @media #{$laptop} {
     .b2 { max-height: 570px; }
   }

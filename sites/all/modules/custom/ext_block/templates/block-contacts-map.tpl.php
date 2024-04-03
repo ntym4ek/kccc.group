@@ -17,28 +17,28 @@
       <div class="contacts">
         <div class="contact">
           <div class="name"><?php print t("Kirovo-Chepetsk plant “Agrohimikat” LLC"); ?></div>
-          <a href="tel:+78332761521" class="phone">+7 (8332) 76-15-21</a>
-          <a href="mailto:agrohimikat@kccc.ru" class="email">agrohimikat@kccc.ru</a>
+          <div><a href="tel:+78332761521" class="phone c0py">+7 (8332) 76-15-21</a></div>
+          <div><a href="mailto:agrohimikat@kccc.ru" class="email c0py">agrohimikat@kccc.ru</a></div>
         </div>
         <div class="contact">
           <div class="name"><?php print t("TH “Kirovo-Chepetsk Chemical Company” LLC"); ?></div>
-          <a href="tel:+78332761530" class="phone">+7 (8332) 76-15-30</a>
-          <a href="mailto:td@kccc.ru" class="email">td@kccc.ru</a>
+          <div><a href="tel:+78332761530" class="phone c0py">+7 (8332) 76-15-30</a></div>
+          <div><a href="mailto:td@kccc.ru" class="email c0py">td@kccc.ru</a></div>
         </div>
         <div class="contact">
           <div class="name"><?php print t("“Strada” LLC"); ?></div>
-          <a href="tel:+78332761534" class="phone">+7 (8332) 76-15-34</a>
-          <a href="mailto:strada_opt@kccc.ru" class="email">strada_opt@kccc.ru</a>
+          <div><a href="tel:+78332761534" class="phone c0py">+7 (8332) 76-15-34</a></div>
+          <div><a href="mailto:strada_opt@kccc.ru" class="email c0py">strada_opt@kccc.ru</a></div>
         </div>
         <div class="contact">
           <div class="name"><?php print t("“EVA” LLC"); ?></div>
-          <a href="tel:+74957443944" class="phone">+7 (495) 744-39-44</a>
-          <a href="mailto:info@eva-si.ru" class="email">info@eva-si.ru</a>
+          <div><a href="tel:+74957443944" class="phone c0py">+7 (495) 744-39-44</a></div>
+          <div><a href="mailto:info@eva-si.ru" class="email c0py">info@eva-si.ru</a></div>
         </div>
         <div class="contact">
           <div class="name"><?php print t("“Smola” LLC"); ?></div>
-          <a href="tel:+79229751514" class="phone">+7 (922) 975-15-14</a>
-          <a href="https://smola.kccc.ru" class="email">https://smola.kccc.ru</a>
+          <div><a href="tel:+79229751514" class="phone c0py">+7 (922) 975-15-14</a></div>
+          <div><a href="https://smola.kccc.ru" class="email c0py">https://smola.kccc.ru</a></div>
         </div>
       </div>
     </div>

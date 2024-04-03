@@ -1313,6 +1313,52 @@ fieldset {
   display: flex;
   line-height: 0; }
 
+.c0py:hover ~ .ctooltip {
+  opacity: 1;
+  visibility: visible; }
+
+.ctooltip {
+  display: inline-block;
+  position: absolute;
+  transition: all 150ms;
+  visibility: hidden;
+  opacity: 0;
+  padding: 0 .4em; }
+  .ctooltip svg {
+    display: block; }
+  .ctooltip .ctooltiptext {
+    display: inline-block;
+    visibility: hidden;
+    min-width: 140px;
+    background-color: black;
+    color: whitesmoke;
+    font-size: .8em;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 6px;
+    padding: 5px 15px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 0;
+    transform: translateX(-50%);
+    margin-left: 1.3em; }
+    .ctooltip .ctooltiptext::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: black transparent transparent transparent; }
+  .ctooltip:hover {
+    opacity: 1;
+    visibility: visible; }
+    .ctooltip:hover .ctooltiptext {
+      visibility: visible;
+      opacity: 1; }
+
 @media print {
   *,
   *:before,
@@ -2332,7 +2378,6 @@ ul.menu {
   max-height: 480px;
   overflow: hidden; }
 .block-contacts-map a {
-  display: block;
   color: inherit; }
 @media only screen and (min-width: 1366px) {
   .block-contacts-map .b2 {

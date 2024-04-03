@@ -143,8 +143,8 @@
         <div class="row">
           <div class="col-xs-12 col-md-6">
             <h2><?php print t('Contact us');?></h2>
-            <p><strong><?php print t("8 (800) 550-24-26"); ?></strong></p>
-            <p><strong><a href="mailto:info@kccc.ru"><?php print t("info@kccc.ru"); ?></a></strong></p>
+            <p><strong><a href="tel:88005502426" class="c0py"><?php print t("8 (800) 550-24-26"); ?></a></strong></p>
+            <p><strong><a href="mailto:info@kccc.ru" class="c0py"><?php print t("info@kccc.ru"); ?></a></strong></p>
             <p><?php print t("KCCC LUBRICANTS LLC,<br>6 Proizvodstvennaya street,<br>Kirovo-Chepetsk, Kirov region, 613048, Russia"); ?></p>
             <p><a href="mailto:info@kccc.ru" class="btn btn-brand btn-wide"><?php print t('Mail us'); ?></a></p>
           </div>
