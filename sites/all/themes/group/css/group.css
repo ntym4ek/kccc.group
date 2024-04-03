@@ -2356,10 +2356,6 @@ ul.menu {
   --swiper-theme-color: #214A8F;
   --swiper-pagination-bottom: 1rem; }
 
-.image img {
-  display: block;
-  width: 100%; }
-
 .page > .header {
   box-shadow: none;
   position: absolute;
@@ -2656,6 +2652,10 @@ ul.menu {
 
 .view-news .views-widget-filter-date_filter {
   min-width: 100px; }
+
+.image img {
+  display: block;
+  width: 100%; }
 
 i.icon {
   font-size: 1.3rem; }
