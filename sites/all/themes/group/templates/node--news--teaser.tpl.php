@@ -97,7 +97,7 @@
           <div class="more"><a href="<?php print $node_url; ?>"><?php print t("Read more"); ?> ></a></div>
           <div class="info">
             <?php print $content["field_division"][0]["#markup"]; ?> | <?php print $date; ?>
-            <span class="views"><i class="icon icon-eye"></i><?php print $stats["totalcount"]; ?></span>
+            <span class="views"><i class="icon icon-09"></i><?php print $stats["totalcount"]; ?></span>
           </div>
         </div>
       </div>

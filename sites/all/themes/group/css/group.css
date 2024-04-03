@@ -2592,10 +2592,16 @@ ul.menu {
     bottom: 2rem; }
 
 .node-news .info {
-  color: #ccc; }
+  color: #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
 .node-news .views {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   margin-left: 2rem; }
+  .node-news .views i.icon {
+    margin-right: 5px; }
 .node-news .image img {
   display: block; }
 .node-news.node-full {
@@ -2651,6 +2657,19 @@ ul.menu {
 .view-news .views-widget-filter-date_filter {
   min-width: 100px; }
 
+i.icon {
+  font-size: 1.3rem; }
+  i.icon.icon-rounded {
+    border: 3px solid #333;
+    border-radius: 2em;
+    width: 1.7em;
+    height: 1.7em;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center; }
+  i.icon:before {
+    display: block; }
+
 a {
   color: #214A8F;
   text-decoration: none; }
@@ -2660,14 +2679,16 @@ a {
 
 .share {
   display: flex;
-  padding: 1rem 0; }
+  cursor: pointer; }
+  .share a {
+    color: inherit; }
   .share i.icon {
-    cursor: pointer;
+    color: #214A8F;
+    font-size: 2rem;
     margin-right: .5rem; }
-  .share .share-btn i.icon {
-    background-color: #214A8F; }
-    .share .share-btn i.icon:hover {
-      background-color: #2655a4; }
+  .share .share-arrow {
+    color: #7D7C7C;
+    font-size: .5rem; }
   .share .share-links {
     display: flex;
     align-items: center;
@@ -2677,51 +2698,6 @@ a {
       transition: margin 200ms; }
   .share.open a {
     margin-left: 0; }
-
-i.icon {
-  display: inline-block;
-  width: 20px;
-  height: 20px; }
-  i.icon.icon-circle {
-    background-color: #D9D9D9;
-    border-radius: 50px;
-    width: 50px;
-    height: 50px;
-    position: relative;
-    transition: background-color 200ms; }
-  i.icon.icon-circle:hover {
-    background-color: silver; }
-  i.icon:after {
-    content: ' ';
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: auto;
-    display: block;
-    height: 100%; }
-  i.icon.icon-share:after {
-    background-image: url("../images/icons/icon-share.svg"); }
-  i.icon.icon-circle.icon-arrow {
-    background-color: transparent;
-    width: 20px; }
-  i.icon.icon-arrow:after {
-    background-image: url("../images/icons/icon-arrow.svg"); }
-  i.icon.icon-vk:after {
-    background-image: url("../images/icons/icon-vk.svg"); }
-  i.icon.icon-email:after {
-    background-image: url("../images/icons/icon-email.svg"); }
-  i.icon.icon-tg:after {
-    background-image: url("../images/icons/icon-tg.svg"); }
-  i.icon.icon-ok:after {
-    background-image: url("../images/icons/icon-ok.svg"); }
-  i.icon.icon-wa:after {
-    background-image: url("../images/icons/icon-wa.svg"); }
-  i.icon.icon-eye {
-    width: 35px;
-    height: 20px;
-    margin-bottom: -3px;
-    margin-right: .5rem; }
-    i.icon.icon-eye:after {
-      background-image: url("../images/icons/icon-eye.svg"); }
 
 .field-type-image fieldset {
   padding: 1rem; }
@@ -2760,17 +2736,10 @@ i.icon {
   border: .5rem solid #214A8F85; }
   #back-to-top .icon {
     color: #214A8F;
-    font-size: 3rem;
-    background: #214A8F;
-    border-radius: 50px;
-    display: block;
-    width: 40px;
-    height: 40px; }
+    font-size: 3rem; }
   @media only screen and (min-width: 768px) {
     #back-to-top .icon {
-      font-size: 2rem;
-      width: 30px;
-      height: 30px; } }
+      font-size: 2rem; } }
 
 .form-item label,
 .form-item .label {

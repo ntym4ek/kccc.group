@@ -1,21 +1,6 @@
-<?
+<?php
 
-define('ROLE_ADMIN', 3);
-
-/**
- * Implements hook_init().
- */
-function ext_user_init()
-{
-  if (user_is_logged_in()) {
-//    if ((arg(0) == "user" && !arg(1)) || (arg(0) == "user" && is_numeric(arg(1)) && arg(2) != 'edit' && !user_has_role(ROLE_ADMIN))) {
-//      drupal_goto('user/' . $GLOBALS['user']->uid . '/edit/main');
-//    }
-//    if ((arg(0) == "card" && !arg(1))) {
-//      drupal_goto('card/' . $GLOBALS['user']->uid);
-//    }
-  }
-}
+const ADMIN_RID = 3;
 
 /**
  * hook_module_implements_alter
@@ -40,7 +25,7 @@ function ext_user_module_implements_alter(&$implementations, $hook)
  */
 function ext_user_form_user_pass_alter(&$form, &$form_state)
 {
-  if (!user_has_role(ROLE_ADMIN)) {
+  if (!user_has_role(ADMIN_RID)) {
     $form['#prefix'] = '<div class="user-auth-form-wrapper">' .
       '<h1>' . t('Password recovery') . '</h1>';
     $form['#suffix'] = '</div>';
@@ -110,7 +95,6 @@ function ext_user_user_load_by_login($login)
   }
   return user_load(0);
 }
-
 
 function ext_user_process_page(&$vars)
 {

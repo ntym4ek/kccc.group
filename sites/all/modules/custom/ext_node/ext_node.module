@@ -43,7 +43,10 @@ function ext_node_preprocess_node(&$vars)
   }
 
   // -- Полная ссылка для шар
-  $vars['node_url_full'] = url('node/' . $node->nid, ['absolute' => true]);
+  $url = url('node/' . $node->nid, ['absolute' => true]);
+  $title = t('News at @site', ['@site' => variable_get('site_name')]);
+  $text = t('A link to the information at the website of @site.', ['@site' => variable_get('site_name')]);
+  $vars['share_btn'] = theme('share_btn', ['url' => $url, 'title' => $title, 'text' => $text]);
 }
 
 /**

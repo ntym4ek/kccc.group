@@ -22,13 +22,10 @@ function group_preprocess_page(&$vars)
   // -- Баннер в шапке
   $banner_uri = '';
   if (isset($vars['node']) && $vars['node']->type == 'page') {
-//    $vars['title'] = '';
     unset($vars["page"]["content"]["system_main"]);
     if (!empty($vars["node"]->field_image_banner)) {
       $banner_uri = $vars["node"]->field_image_banner['und'][0]['uri'];
     }
-  } elseif (isset($vars['node']) && $vars['node']->type == 'news') {
-//    $vars['title'] = '';
   } elseif ($_GET['q'] == 'news') {
     $banner_uri = 'public://images/page-banners/news.jpg';
   } elseif ($_GET['q'] == 'job') {
@@ -37,9 +34,6 @@ function group_preprocess_page(&$vars)
   if ($banner_uri) {
     $vars['is_banner_on'] = true;
     $vars['is_title_on'] = false;
-//    $vars['banner_title_prefix'] = '';
-//    $vars['banner_title'] = '';
-//    $vars['banner_title_suffix'] = '';
     $vars['banner_url'] = file_create_url($banner_uri);
     $vars['banner_mobile_url'] = image_style_url('banner_mobile', $banner_uri);
   }
@@ -48,8 +42,7 @@ function group_preprocess_page(&$vars)
   $path = drupal_is_front_page() ? '<front>' : $_GET['q'];
   if ($links = language_negotiation_get_switch_links('language', $path)) {
     $lang = $GLOBALS["language"]->language == 'ru' ? 'en' : 'ru';
-    $title = $lang == 'ru' ? 'RU' : 'EN';
-    $vars['language_link'] = l($title, $links->links[$lang]['href'], $links->links[$lang] + ['html' => TRUE]);
+    $vars['language_link'] = l('<i class="icon icon-12"></i>', $links->links[$lang]['href'], $links->links[$lang] + ['html' => TRUE]);
     $vars['language_link_mobile'] = l($lang == 'en' ? 'English' : 'Русский', $links->links[$lang]['href'], $links->links[$lang]);
   }
 }
@@ -65,15 +58,10 @@ function group_theme()
       'variables' => [],
       'template' => 'templates/card-division',
     ],
+    'share_btn' => [
+      'variables' => ['url' => null, 'title' => null, 'text' => null],
+      'template' => 'templates/share-btn',
+    ],
   ];
 }
 
-function group_preprocess_menu_link(&$vars)
-{
-  if ($vars["element"]["#href"] == 'user' && user_is_logged_in()) {
-    // сменить Аккаунт на Имя пользователя
-    //    $vars["element"]["#title"] = $GLOBALS['user']->name;
-    $vars["element"]["#localized_options"]['html'] = true;
-    $vars["element"]["#title"] = '<img class="icon-user hide-xs-only hide-sm-only" src="/sites/all/themes/group/images/icons/icon-user.svg" /><span class="hide-md">' . $vars["element"]["#title"] . '</span>';
-  }
-}

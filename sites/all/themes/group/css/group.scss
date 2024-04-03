@@ -21,7 +21,7 @@
   width: 100%;
 }
 
-// -- висящий двойной header с лого и меню
+// -- Шапка -------------------------------------------------------------------------------------------
 .page > .header {
   box-shadow: none;
   position: absolute; top: 45px; left: 0; right: 0; z-index: 10;
@@ -151,7 +151,7 @@
 }
 
 
-// -- Title
+// -- Баннер -------------------------------------------------------------------------------------------
 .page-highlighted {
   .screen-width {
     background-position: center; background-size: cover;
@@ -175,6 +175,7 @@
   }
 }
 
+// -- Крошки -------------------------------------------------------------------------------------------
 .breadcrumb {
   padding: 0;
    a {
@@ -185,6 +186,7 @@
   .first a { padding-left: 0; }
 }
 
+// -- Футер -------------------------------------------------------------------------------------------
 .page-footer {
   padding: 2rem 0;
   .branding {
@@ -231,7 +233,7 @@
   }
 }
 
-// -- карточка новости
+// -- карточка новости -----------------------------------------------------------------------------------
 .card {
   background: #fff;
   position: relative;
@@ -254,12 +256,16 @@
   }
 }
 
-// -- node
+// -- Ноды -------------------------------------------------------------------------------------------------
 .node-news {
-  .info { color: $text-muted; }
+  .info {
+    color: $text-muted;
+    display: flex; justify-content: space-between; align-items: center;
+  }
   .views {
-    display: inline-block;
+    display: flex; align-items: center;
     margin-left: 2rem;
+    i.icon { margin-right: 5px; }
   }
   .image img { display: block; }
 
@@ -323,24 +329,33 @@
   }
 }
 
-// -- helper
+// -- helper --------------------------------------------------------------------------------------------
+// иконочный шрифт
+i.icon {
+  font-size: 1.3rem;
+  &.icon-rounded {
+    border: 3px solid $text-color; border-radius: 2em;
+    width: 1.7em; height: 1.7em;
+    display: inline-flex; justify-content: center; align-items: center;
+  }
+  &:before { display: block; }
+}
+
 a {
   color: $brand-color; text-decoration: none;
 }
 .more a { color: $brand-color; }
 
 .share {
-  display: flex; padding: 1rem 0;
+  display: flex;
+  cursor: pointer;
+  a { color: inherit; }
   i.icon {
-    cursor: pointer;
+    color: $brand-color; font-size: 2rem;
     margin-right: .5rem;
   }
-
-  .share-btn {
-    i.icon {
-      background-color: $brand-color;
-      &:hover { background-color: lighten($brand-color, 5%); }
-    }
+  .share-arrow {
+    color: $text-light; font-size: .5rem;
   }
   .share-links {
     display: flex; align-items: center;
@@ -351,40 +366,6 @@ a {
     }
   }
   &.open a { margin-left: 0; }
-}
-
-i.icon {
-  display: inline-block;
-  width: 20px; height: 20px;
-  &.icon-circle {
-    background-color: $gray-light;
-    border-radius: 50px;
-    width: 50px; height: 50px;
-    position: relative;
-    transition: background-color 200ms;
-  }
-  &.icon-circle:hover { background-color: darken($gray-light, 10%); }
-  &:after {
-    content:' ';
-    background-repeat: no-repeat; background-position: center; background-size: auto;
-    display: block;
-    height: 100%;
-  }
-  &.icon-share:after  { background-image: url("../images/icons/icon-share.svg"); }
-  &.icon-circle.icon-arrow        {
-    background-color: transparent; width: 20px;
-  }
-  &.icon-arrow:after  { background-image: url("../images/icons/icon-arrow.svg"); }
-  &.icon-vk:after     { background-image: url("../images/icons/icon-vk.svg"); }
-  &.icon-email:after  { background-image: url("../images/icons/icon-email.svg"); }
-  &.icon-tg:after     { background-image: url("../images/icons/icon-tg.svg"); }
-  &.icon-ok:after     { background-image: url("../images/icons/icon-ok.svg"); }
-  &.icon-wa:after     { background-image: url("../images/icons/icon-wa.svg"); }
-  &.icon-eye    {
-    width: 35px; height: 20px;
-    margin-bottom: -3px; margin-right: .5rem;
-    &:after { background-image: url("../images/icons/icon-eye.svg"); }
-  }
 }
 
 .field-type-image {
@@ -428,18 +409,14 @@ i.icon {
   border: .5rem solid #214A8F85;
   .icon {
     color: $brand-color; font-size: 3rem;
-    background: $brand-color; border-radius: 50px; display:block; width: 40px; height: 40px; // временно
   }
 
   @media #{$pad} {
-    .icon {
-      font-size: 2rem;
-      width: 30px; height: 30px; // временно
-    }
+    .icon { font-size: 2rem; }
   }
 }
 
-// -- формы
+// -- формы ----------------------------------------------------------------------------------------
 .form-item {
   label,
   .label {

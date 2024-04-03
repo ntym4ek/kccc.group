@@ -88,7 +88,7 @@
         <div class="info">
           <?php print $content["field_division"][0]["#markup"]; ?> | <?php print $date; ?>
           <?php if (!empty($stats["totalcount"])): ?>
-          <span class="views"><i class="icon icon-eye"></i><?php print $stats["totalcount"]; ?></span>
+          <span class="views"><i class="icon icon-09"></i><?php print $stats["totalcount"]; ?></span>
           <?php endif; ?>
         </div>
         <h1<?php print $title_attributes; ?>><?php print $title; ?></h1>
@@ -124,19 +124,7 @@
       </div>
 
       <div class="footer">
-        <div class="share">
-          <div class="share-btn">
-            <i class="icon icon-circle icon-share"></i>
-          </div>
-          <div class="share-links">
-            <a><i class="icon icon-circle icon-arrow"></i></a>
-            <a class="vk" href="https://vk.com/share.php?url=<?php print $node_url_full; ?>" rel="nofollow" target="_blank" title="вконтакте"><i class="icon icon-circle icon-vk"></i></a>
-            <a class="tg" href="https://t.me/share/url?url=<?php print $node_url_full; ?>&text=<?php print $title; ?>" rel="nofollow" target="_blank" title="telegram"><i class="icon icon-circle icon-tg"></i></a>
-            <a class="ok" href="https://connect.ok.ru/offer?url=<?php print $node_url_full; ?>&title=<?php print $title; ?>" rel="nofollow" target="_blank" title="одноклассники"><i class="icon icon-circle icon-ok"></i></a>
-            <a class="em" href="mailto:?to=&subject=Subject&body=Link:%20<?php print $node_url_full; ?>%0D%0D" target="_blank" title="email"><i class="icon icon-circle icon-email"></i></a>
-          </div>
-        </div>
-
+        <?php print $share_btn; ?>
       </div>
     </div>
   </div>

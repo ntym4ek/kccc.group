@@ -3,6 +3,6 @@ description = Тема на базе Custom Base Theme
 core = 7.x
 base theme = cbtheme
 
-
 stylesheets[all][] = css/group.css
+stylesheets[all][] = fonts/iconfont/styles.css
 
