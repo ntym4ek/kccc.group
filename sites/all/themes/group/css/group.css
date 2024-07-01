@@ -2657,6 +2657,16 @@ ul.menu {
     justify-content: center; }
     .node-news.node-full .image img {
       max-height: 100%; }
+  .node-news.node-full .node-files .field-type-file .field-label {
+    color: #214A8F;
+    margin-bottom: 10px; }
+    .node-news.node-full .node-files .field-type-file .field-label:before {
+      content: "";
+      display: block;
+      background: #D9D9D9;
+      margin-bottom: 10px;
+      width: 5rem;
+      height: 2px; }
   @media only screen and (min-width: 1024px) {
     .node-news.node-full .image {
       min-height: 250px; } }
@@ -2816,5 +2826,32 @@ a {
 @media only screen and (min-width: 1024px) {
   .webform-client-form-10 .screen-width {
     padding: 3rem 0; } }
+
+.field-type-file .field-item {
+  margin-bottom: 2rem; }
+  .field-type-file .field-item .file {
+    display: flex; }
+    .field-type-file .field-item .file .file-img {
+      display: flex;
+      align-items: center;
+      margin-right: .5rem;
+      margin-left: -9px; }
+      .field-type-file .field-item .file .file-img i.icon {
+        color: #214A8F;
+        font-size: 3.4rem; }
+    .field-type-file .field-item .file .file-info {
+      flex: 0 1 600px;
+      margin-top: 5px; }
+      .field-type-file .field-item .file .file-info a {
+        color: #333;
+        font-weight: 600; }
+        .field-type-file .field-item .file .file-info a:hover {
+          text-decoration: underline; }
+      .field-type-file .field-item .file .file-info span {
+        display: flex;
+        align-items: center;
+        color: #ccc;
+        font-size: 0.889rem;
+        margin-top: 4px; }
 
 /*# sourceMappingURL=group.css.map */

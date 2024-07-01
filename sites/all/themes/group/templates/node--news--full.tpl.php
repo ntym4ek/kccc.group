@@ -121,6 +121,13 @@
         <div class="text">
           <div class="summary"><?php print render($content['body']); ?></div>
         </div>
+
+
+        <?php if (!empty($content['field_files'])): ?>
+          <div class="node-files">
+            <?php print drupal_render($content['field_files']); ?>
+          </div>
+        <?php endif; ?>
       </div>
 
       <div class="footer">
