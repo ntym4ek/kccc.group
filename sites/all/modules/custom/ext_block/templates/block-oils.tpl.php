@@ -119,11 +119,13 @@
 
     <div class="row center-xs">
       <div class="col-xs-12 col-md-6">
-        <div class="division">
-          <div class="logo"><img src="/sites/all/modules/custom/ext_block/images/logo-kl.png" alt=""></div>
-          <p><strong>KCCC LUBRICANTS</strong></p>
-          <div class="name"><?php print t("Engine oils and lubricants with Chinese additive packages"); ?></div>
-        </div>
+        <a href="https://lubricants.kccc.ru/"  target="_blank">
+          <div class="division hover-raise">
+            <div class="logo"><img src="/sites/all/modules/custom/ext_block/images/logo-kl.png" alt=""></div>
+            <p><strong>KCCC LUBRICANTS</strong></p>
+            <div class="name"><?php print t("Engine oils and lubricants with Chinese additive packages"); ?></div>
+          </div>
+        </a>
       </div>
       <div class="col-xs-12 col-md-6">
         <a href="https://monterossi.ru"  target="_blank">

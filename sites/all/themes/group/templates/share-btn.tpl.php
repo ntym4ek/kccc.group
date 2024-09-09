@@ -2,7 +2,7 @@
 ?>
 
 <div class="share">
-  <div class="share-btn"><a href="javascript:void();" title="<?php print t('Share link'); ?>"><i class="icon icon-13"></i></a></div>
+  <div class="share-btn"><a href="javascript:void(0);" title="<?php print t('Share link'); ?>"><i class="icon icon-13"></i></a></div>
   <div class="share-links">
     <a class="share-arrow"><i class="icon icon-01"></i></a>
     <a class="vk" href="https://vk.com/share.php?url=<?php print urlencode($url); ?>" rel="nofollow" target="_blank" title="вконтакте"><i class="icon icon-14"></i></a>

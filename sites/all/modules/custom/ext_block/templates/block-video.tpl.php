@@ -14,7 +14,7 @@
         </div>
         <div class="col-xs-12 col-md-5">
           <div class="b2">
-            <?php print t('We are working to&nbsp;provide the&nbsp;world with modern, environmentally safe and&nbsp;effective chemicals.'); ?>
+            <?php print t('We are working to&nbsp;provide the&nbsp;world with modern and&nbsp;effective chemicals.'); ?>
           </div>
         </div>
       </div>

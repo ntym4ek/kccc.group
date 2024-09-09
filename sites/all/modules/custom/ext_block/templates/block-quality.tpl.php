@@ -38,7 +38,7 @@
           <div class="b3">
             <div class="image"><img src="/sites/all/modules/custom/ext_block/images/quality-2.jpg" alt=""></div>
             <div class="text">
-              <p><?php print t("Focusing on&nbsp;new European trends and growth drivers, we&nbsp;are&nbsp;constantly intensifying production and&nbsp;mastering new types of&nbsp;products."); ?></p>
+              <p><?php print t("Focusing on&nbsp;new international trends and&nbsp;growth drivers, we&nbsp;are&nbsp;constantly intensifying production and&nbsp;mastering new types of&nbsp;products."); ?></p>
               <p><?php print t("Our accumulated knowledge allows us to&nbsp;create highly effective products that can really solve complex problems."); ?></p>
             </div>
           </div>
