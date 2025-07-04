@@ -144,7 +144,7 @@
               <ul>
                 <li><span class="arrow"></span><a href="https://kccc.ru/" title="<?php print t('Agricultural industry'); ?>" target="_blank"><?php print t('Agricultural industry'); ?></a></li>
                 <li><span class="arrow"></span><a href="https://smola.kccc.ru/" title="<?php print t('Synthetic resins'); ?>" target="_blank"><?php print t('Synthetic resins'); ?></a></li>
-                <li><span class="arrow"></span><a href="<?php print url ('node/123'); ?>" title="<?php print t('Engine oils and lubricants'); ?>" target="_blank"><?php print t('Engine oils and lubricants'); ?></a></li>
+                <li><span class="arrow"></span><a href="https://monterossi.ru/" title="<?php print t('Engine oils and lubricants'); ?>" target="_blank"><?php print t('Engine oils and lubricants'); ?></a></li>
                 <li><span class="arrow"></span><a href="https://eva-si.ru/" title="<?php print t('Chemical Ingredients'); ?>" target="_blank"><?php print t('Chemical Ingredients'); ?></a></li>
                 <li><span class="arrow"></span><a href="https://joy-car.ru/" title="<?php print t('Car chemicals'); ?>" target="_blank"><?php print t('Car chemicals'); ?></a></li>
                 <li><span class="arrow"></span><a href="https://joy-magazin.ru/catalog/khozyaystvennye-tovary/bytovaya-himiya/" title="<?php print t('Household chemicals'); ?>" target="_blank"><?php print t('Household chemicals'); ?></a></li>
