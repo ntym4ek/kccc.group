@@ -28,7 +28,7 @@
 
 .block-front-banner {
   .swiper-slide {
-    height: 635px;
+    height: 400px;
     .image {
       position: absolute; top:0; bottom: 0;left:0; right: 0; z-index: 1;
       background-size: cover; background-position: center;
@@ -50,22 +50,27 @@
   .text-wr {
     position: absolute; z-index: 3;
     color: #fff;
-    margin-top: 15rem; padding-left: 1rem;
-    max-width: 310px;
+    margin-top: 11rem;
+    max-width: 400px;
     h2 {
-      font-size: $font-size-h2; font-weight: 700; text-shadow: 1px 1px 10px #666;
+      font-size: 1.5rem; font-weight: 700; text-shadow: 0 0 10px #000;
       display: inline-block;
       margin-bottom: 2rem;
     }
   }
 
   @media #{$tablet} {
-    .text-wr { max-width: 450px; }
+    .swiper-slide { height: 500px; }
+    .text-wr {
+      max-width: 450px;
+      padding-left: 1rem;
+
+      h2 { font-size: $font-size-h2; }
+      a { @include button-size($padding-large-vertical, $padding-large-horizontal, $input-font-size-large, $line-height-large, $btn-border-radius-large, $input-height-large); }
+    }
   }
   @media #{$laptop} {
-    .swiper-slide {
-      height: 750px;
-    }
+    .swiper-slide { height: 750px; }
     .text-wr {
       margin-top: 210px; padding-left: 0;
       max-width: 880px;

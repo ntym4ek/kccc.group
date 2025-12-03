@@ -28,9 +28,11 @@ function helper_get_front_banner_slides()
       if (module_exists('i18n_taxonomy')) {
         $term = i18n_taxonomy_localize_terms($term);
       }
+      $banner_uri = $term->field_image["und"][0]["uri"];
       $banners[] = [
         'title' => $term->name,
-        'img' => file_create_url($term->field_image["und"][0]["uri"]),
+        'img' => file_create_url($banner_uri),
+        'img_mobile' => image_style_url('banner_mobile', $banner_uri),
         'path' => url($term->field_text_link["und"][0]["safe_value"]),
       ];
     }

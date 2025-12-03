@@ -61,6 +61,29 @@ function ext_node_node_presave($node)
   }
 }
 
+function ext_node_node_view($node, $view_mode)
+{
+  // автоматическая установка атрибута alt для изображений
+  if (isset($node->content['field_images'])) {
+    foreach ($node->content['field_images']['#items'] as $delta => $item) {
+      if ($view_mode == 'full'){
+        $suffix = count($node->field_images['und']) > 1 ? '. ' . t('Image') . ' ' . ($delta+1) . ' ' . t('of', ['context' => 'photo']) . ' ' . count($node->field_images['und']) : '';
+        $alt = $node->title . $suffix;
+      } else {
+        $alt = t('Preview') . '. ' . $node->title;
+      }
+      $node->content['field_images'][$delta]['#item']['alt'] = $alt;
+    }
+  }
+  if (isset($node->content['field_image'])) {
+    foreach ($node->content['field_image']['#items'] as $delta => $item) {
+      $alt = $node->title;
+      if ($view_mode == 'teaser') $alt = t('Preview') . '. ' . $alt;
+      $node->content['field_image'][$delta]['#item']['alt'] = $alt;
+    }
+  }
+}
+
 /**
  * Implements hook_form_FORMID_alter().
  */
