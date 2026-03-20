@@ -15,13 +15,13 @@
                 <div class="row">
                   <div class="col-xs-12 col-md-6 col-lg-3">
                     <div class="counter">
-                      <span>134 260</span>
+                      <span>250 000</span>
                       <p><?php print t("tons per year production capacity"); ?></p>
                     </div>
                   </div>
                   <div class="col-xs-12 col-md-6 col-lg-3">
                     <div class="counter">
-                      <span>750</span>
+                      <span>800</span>
                       <p><?php print t("employees working in&nbsp;holding"); ?></p>
                     </div>
                   </div>

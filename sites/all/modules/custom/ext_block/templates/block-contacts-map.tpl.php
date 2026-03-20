@@ -37,7 +37,7 @@
         </div>
         <div class="contact">
           <div class="name"><?php print t("“Smola” LLC"); ?></div>
-          <div><a href="tel:+79229751514" class="phone c0py">+7 (922) 975-15-14</a></div>
+          <div><a href="tel:+79229015350" class="phone c0py">+7 (922) 901-53-50</a></div>
           <div><a href="https://smola.kccc.ru" class="email c0py">https://smola.kccc.ru</a></div>
         </div>
       </div>
