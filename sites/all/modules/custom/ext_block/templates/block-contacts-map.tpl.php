@@ -37,14 +37,21 @@
         </div>
         <div class="contact">
           <div class="name"><?php print t("“Smola” LLC"); ?></div>
-          <div><a href="tel:+79229015350" class="phone c0py">+7 (922) 901-53-50</a></div>
-          <div><a href="https://smola.kccc.ru" class="email c0py">https://smola.kccc.ru</a></div>
+          <div><a href="tel:+79229000901" class="phone c0py">+7 922 900-09-01</a></div>
+          <div><a href="mailto:info.smola@kccc.ru" class="email c0py">info.smola@kccc.ru</a></div>
+          <div><a href="https://smola.kccc.ru" class="email c0py" target="_blank">https://smola.kccc.ru</a></div>
+        </div>
+        <div class="contact">
+          <div class="name"><?php print t("“KCCC Lubricants” LLC"); ?></div>
+          <div><a href="tel:+79229505047" class="phone c0py">+7 922 950-50-47</a></div>
+          <div><a href="mailto:info-lubricants@kccc.ru" class="email c0py">info-lubricants@kccc.ru</a></div>
+          <div><a href="https://kccc-lubricants.ru" class="email c0py" target="_blank">https://kccc-lubricants.ru</a></div>
         </div>
       </div>
     </div>
     <div class="col-xs-12 col-md-7">
       <div class="b2">
-        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=mymaps%3AdR77aJfcjhmbj1x-jz4BO2Fgt_bXyhkL&amp;width=100%25&amp;height=550&amp;lang=ru_RU&amp;scroll=true"></script>
+        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=mymaps%3AdR77aJfcjhmbj1x-jz4BO2Fgt_bXyhkL&amp;width=100%25&amp;height=650&amp;lang=ru_RU&amp;scroll=true"></script>
       </div>
     </div>
   </div>
